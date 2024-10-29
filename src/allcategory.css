@@ -1,0 +1,286 @@
+/* Container and top section adjustments */
+.container {
+  display: flex;
+  flex-direction: column; /* Ensure content flows top to bottom */
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20px; /* Space between top and bottom sections */
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns: left slider and right sliders */
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.main-slider img {
+  width: 100%; /* Fill the main slider */
+  height: 400px;
+}
+
+.box-sliders {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for the box sliders */
+  grid-template-rows: 1fr 1fr; /* Two rows for the box sliders */
+  gap: 10px;
+}
+
+.box-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.box-slider img {
+  width: 100%; /* Ensure the images fit in the boxes */
+  height:180px;
+}
+
+/* Bottom section styles */
+.bottom-section {
+  display: flex;
+  justify-content: center; /* Center the entire section */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  grid-gap: 20px; /* Space between the grid items */
+  margin-bottom: 20px;
+}
+
+.button {
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button img {
+  width: 230px; /* Adjust image size */
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row for smaller screens */
+  }
+}
+
+/* Bottom form */
+.bottomform {
+  height: 150px;
+  width: 100%;
+  background-color: rgb(34, 163, 198);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.bottomform p {
+  margin-left: 100px;
+  color: bisque;
+}
+
+.bottomform h2 {
+  color: rgb(143, 81, 31);
+}
+
+/* Bottom details */
+.bottomdetails {
+  background-color: rgb(197, 152, 228);
+  justify-content: center;
+  border-radius: 40px;
+  display: flex;
+}
+
+.bottomleft {
+  margin-left: 0%;
+  width: 60%;
+  margin-left: 50px;
+}
+
+.botimg {
+  width: 40%;
+}
+
+.botimg img {
+  border-radius: 10px;
+  margin-left: 30%;
+  height: 250px;
+  width: 250px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Input box inside bottom details */
+.bottomdetails input {
+  margin-top: 40px;
+  height: 100px;
+  width: 400px;
+  border-color: none;
+}
+
+/* Bottom heading */
+.botrheading {
+  height: fit-content;
+}
+
+.botrheading h2 {
+  margin-left: 0%;
+}
+
+/* Bottom button */
+.botbutton {
+  width: fit-content;
+}
+
+.botbutton button {
+  padding: 10px;
+  background-color: #120dad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+/* Center align bottom section text */
+.bottomsection {
+  text-align: center;
+}
+
+/* Buttons row */
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+/* Define the animation */
+@keyframes easeInOutAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the container */
+.button {
+  animation: easeInOutAnimation 2s ease-in-out infinite;
+}
+
+.button {
+  margin: 0 10px;
+  text-align: center; 
+}
+
+.button img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 30px; 
+}
+
+/* Adjust spacing for the second row */
+.buttons-row:nth-child(2) .button {
+  margin: 0 20px;
+}
+
+/* Remove hover glow effect for .allcatbottom */
+.allcatbottom {
+  height: 400px;
+  width: 80%;
+  background-color: #120dad;
+  border-radius: 20px;
+  margin-left: 10%;
+  position: relative;
+  transition: box-shadow 0.5s ease-in-out; /* Smooth transition */
+  box-shadow: none; /* No shadow initially */
+}
+
+/* Glow effect on button click */
+.allcatbottom.active-shadow {
+  box-shadow: 0 0 40px rgba(255, 255, 0, 0.7), /* Yellow color */
+              0 0 80px rgba(255, 255, 0, 0.5), 
+              0 0 100px rgba(255, 255, 0, 0.3);
+}
+
+/* Optional: Add active/click effect if needed */
+.allcatbottom:active {
+  transform: scale(1.02); /* Slight scale on click */
+  box-shadow: 0 0 60px rgba(255, 255, 0, 0.9), /* Yellow color */
+              0 0 100px rgba(255, 255, 0, 0.7), 
+              0 0 120px rgba(255, 255, 0, 0.5);
+}
+
+.allcatbottom img {
+  height: 400px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Input box styles */
+.input-box656 {
+  position: absolute;
+  top: 200px;
+  height: 120px;
+  right: 110px;
+  width: 300px;
+  padding: 5px;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Submit button styling */
+.allcat-submit {
+  z-index: 1;
+  position: absolute;
+  top: 350px;
+  right: 110px;
+  width: 250px; /* Adjust width for the pill shape */
+  height: 40px; /* Adjust height for the button */
+  padding: 10px; /* Padding for text inside the button */
+  background-color: #f0f0f0; /* Light background color */
+  color: #333; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 30px; /* Rounded corners for pill shape */
+  font-size: 16px; /* Font size for the text */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove outline */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.allcat-submit:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.allcat-submit:active {
+  transform: translateY(2px); /* Slight push effect on click */
+}

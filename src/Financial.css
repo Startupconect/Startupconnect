@@ -1,0 +1,296 @@
+/* top section */
+.top-section4{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: left slider and right sliders */
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .main-slider4 {
+    display:block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 30px;
+  }
+  
+  .main-slider4 img {
+    width: 110%; /* Fill the main slider */
+    height: 350px;
+    border-radius: 35px;
+  }
+  
+  .box-sliders4 {
+    display: block;
+    gap: 10px;
+    height: 200px;
+    width:350px ;
+    margin-left: 150px;
+  }
+  
+  .box-slider4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+  
+  }
+  
+  .box-slider4 img {
+    width: 100%; /* Ensure the images fit in the boxes */
+    height: 150px;
+    border-radius: 35px;
+  }
+  
+  
+  /* Define the animation */
+  @keyframes easeInOutAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to the container */
+  .parag4 {
+    animation: easeInOutAnimation 2s ease-in-out infinite;
+  }
+  .parag4 {
+    background-color: #bd2727;
+    padding-left: 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    height: 10%;
+    justify-content: center;
+    width: 100;
+    height: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .parag4{
+    width: 500px;
+    height:fit-content;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:150%;
+    margin-left:30px;
+    border-radius: 15px;
+   
+    color: #efefef;
+    box-shadow: 2px 2px rgba(249, 151, 151, 0.996);
+  }
+  
+  
+  
+  /* /middle row */
+  
+  .middle-row {
+    display: flex;
+    height: 350px;
+    justify-content: space-between;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/005/050/536/small/banner-gradient-background-modern-with-colorful-style-gradient-color-free-vector.jpg"  );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .search-profile-container {
+    width: 80%;
+    height: 320px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px 20px 30px 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 150px;
+  }
+  
+  .search-profile-container input {
+    width: 90%;
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .search-profile-container input::placeholder{
+    font-size: medium;
+    font-family: 'Georgia';
+  }
+  
+  .profiles{
+    display:inline-flex;
+    height: 100px;
+    text-align: center;
+    
+  }
+  
+  .profile {
+    display: inline-block;
+    align-items: center;
+    gap: 20px;
+    width: 350px;
+    height:200px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left:20px;
+    border: 1px  solid #4b4848;
+    border-radius: 10px;
+  }
+  
+  .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  
+  
+  .bottom-row {
+    width: 100%;
+    height:350px;
+    padding-left: 30px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: block;
+   
+  }
+  
+  .profile-container {
+    display:inline-block;
+    width:100%;
+    height:flex;
+    margin-top: 60px;
+    text-align: center;
+    
+  }
+  .load-more {
+    margin-top: 20px;
+    display:block;
+    text-align: center;
+  }
+  
+  .load-more button {
+    padding: 10px 20px;
+    height: 50px;
+    margin-bottom: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 1px rgba(128, 128, 128, 0.726);
+  }
+  
+  .load-more button:hover {
+    background-color: #0056b3;
+  }
+  /* Define the animation */
+  @keyframes easeInOutAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  }
+  
+  /* Apply the animation to the container */
+  .business-product {
+  animation: easeInOutAnimation 2s ease-in-out infinite;
+  }
+  .filter-container {
+  background-color: #b1daca;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 5px;
+  box-shadow: 2px 2px grey;
+  overflow: hidden;
+  }
+  .filter-container h2{
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px grey;
+  }
+  
+  .filter {
+  margin-bottom: 20px;
+  }
+  
+  .filter-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px grey;
+  
+  }
+  
+  .filter-content {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px grey;
+  }
+  
+  .filter-item {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .filter-item:last-child {
+  border-bottom: none;
+  }
+  
+  .company-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  }
+  
+  .location {
+  font-size: 0.9em;
+  color: #888;
+  }
+  
+  .divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+  }
+  
+  .company-details {
+  text-align: left;
+  font-size: 0.9em;
+  }
+  
+  .profile-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  }
+  
+  .company-info {
+  text-align: left;
+  }

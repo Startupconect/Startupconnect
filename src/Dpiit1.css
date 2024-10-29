@@ -1,0 +1,159 @@
+.L0010dpiit-container {
+  position: relative;
+  background: linear-gradient(135deg, #100e10, #070707);
+  font-family: 'Times New Roman', Times, serif;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 50px auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.L0010dpiit-container::before,
+.L0010dpiit-container::after {
+  content: counter(name);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  border-radius: 5px;
+  padding: 0px;
+  background: linear-gradient(135deg, #0c0a12, #010101);
+  z-index: 0;
+}
+
+.L0010dpiit-container::before {
+  left: +30px;
+}
+
+.L0010dpiit-container::after {
+  right: -30px;
+}
+
+.L0010dpiit-background {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  right: -20px;
+  bottom: 0;
+  background: #fbfdfc;
+  z-index: 0;
+}
+
+.L0010dpiit-content {
+  position: relative;
+  background: linear-gradient(135deg, #b6e0d1, #95cedc);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 4;
+}
+
+.L0010dpiit-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.L0010dpiit-content h1,
+.L0010dpiit-content h2 {
+  color: #7b1fa2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.L0010dpiit-content h1:hover,
+.L0010dpiit-content h2:hover {
+  color: #040404; /* Change color on hover */
+  text-decoration: dashed; /* Add underline effect on hover */
+}
+
+.L0010title-logo {
+  width: 20px;
+  margin: 0 10px;
+}
+
+.L0010dpiit-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.L0010dpiit-content h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #512da8;
+}
+
+.L0010dpiit-content p {
+  font-size: 16px;
+  color: #050404;
+  line-height: 1.8;
+}
+
+.L0010dpiit-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.L0010dpiit-content ul li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.L0010apply-button {
+  background-color: #562a7a;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.L0010apply-button:hover {
+  background-color: #0a090b;
+  transform: scale(1.05);
+}
+
+.L0010nsws-info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.L0010nsws-info a {
+  color: #512da8;
+  text-decoration: none;
+}
+
+.L0010nsws-info a:hover {
+  text-decoration: underline;
+}
+
+.L0010buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.L0010tax-button {
+  background-color: #5f3267;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.L0010tax-button:hover {
+  background-color: #0e0d0f;
+  transform: scale(1.05);
+}

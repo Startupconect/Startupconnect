@@ -1,0 +1,99 @@
+.I112 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f0f8ff; /* Light blue background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  color: #151616;
+}
+
+.I112 h1 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  color: #151616; /* Darker shade of blue */
+
+}
+
+.I112 .I112 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.I112 .I112 {
+  width: 100%;
+  background-color: #131212; /* White background for each FAQ */
+  margin: 10px 0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.I112 .I112:hover {
+  background-color: #e1f5fe; /* Light blue on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  color: #151616;
+}
+
+.I112 .I112 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #83eff4; /* Darker text color */
+}
+
+.I112 .I112 {
+  margin-top: 10px;
+  text-align: left;
+  padding: 0 1em;
+  color: #c2dcf5;
+  font-size: 14px;
+}
+
+.I112 .I112 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.I112 .I112 {
+  font-size: 2.5em;
+  cursor: pointer;
+  color: #74bbeb; /* Blue arrows */
+  transition: color 0.3s ease;
+}
+
+.I112 .I112:hover {
+  color: #9ae7d7; /* Green on hover */
+}
+
+.I112 .I112 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #79f2da; /* Vibrant green button */
+  color: rgb(3, 3, 3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.I112 .I112:hover {
+  background-color: #7ef0d9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: green;
+}
+
+.I112 .I112 svg {
+  transition: transform 0.3s ease;
+}
+
+.I112 .I112 svg:hover {
+  transform: scale(1.2); /* Enlarge the icon on hover */
+}

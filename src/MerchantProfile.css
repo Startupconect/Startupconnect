@@ -1,0 +1,235 @@
+
+/* Layout for 3 sections (left, center, right) */
+.maincontainer img{
+    width: 1260px;
+}
+.merchant-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left, Center, and Right Section */
+.left-section, .center-section, .merchant-right {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Ensure the center section takes more space */
+.center-section {
+    flex: 2;
+}
+
+/* Header Tabs */
+.header-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #a2a5ab;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color:rgb(182, 107, 225);
+    color: white;
+}
+
+/* Dynamic section content styling */
+.section-content {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+/* Right Section Styles */
+.merchant-right {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.profile-info89 img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.profile-info89 h3 {
+    margin-bottom: 5px;
+}
+
+.profile-info89 p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.fa-phone, .fa-envelope {
+    margin-right: 8px;
+}
+/* Tie up with Companies Section */
+
+
+/* Existing code for your three top containers goes here */
+
+.bottom-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+    margin-bottom: 10%;
+    align-items: center;
+  }
+  
+  .centered-bottom {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(168, 19, 158);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+  
+  .bottomcontainer{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+     /* Background color for bottom container */
+    flex: 1; /* Occupy remaining space */
+    margin-top: 20px;
+  }
+
+  .centerbottom{
+    width: 300px; /* Width of the centered box */
+    height: 100px; /* Height of the centered box */
+    background-color: rgb(182, 107, 225); /* Background color */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    color: white; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .centerbottom img{
+    height: 80px;
+    width: 80px;
+    mix-blend-mode: multiply;
+  }
+
+  #counter{
+    display: block;
+    color:rgb(9, 9, 9);
+    margin-left: 10px;
+    font-weight: bolder;
+  }
+
+  .-bot197-floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px; /* Adjust width for pill shape */
+    height: 50px; /* Adjust height for pill shape */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    transition: transform 0.3s ease;
+    mix-blend-mode: multiply;
+    margin-right: 20px;
+    animation: float 2s ease-in-out infinite;
+    border-radius: 25px; /* Rounded shape */ 
+}
+
+/* General Button Styles for all buttons */
+.-bot197-floating-btn-common {
+    width: 200px; /* Ensuring consistent width */
+    height: 50px; /* Consistent height */
+    border-radius: 25px; /* Pill shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px; /* Adjust text size */
+    
+}
+
+/* Connect Button Style */
+.-bot197-floating-connect-btn {
+    background-color: #0073b1;
+    color: white;
+    border-radius: 25px; /* Same rounded style */
+    height: 40px;
+    width: 180px;
+    box-shadow: 0 10px 10px gray;
+}
+
+/* Pending Button Style */
+.-bot197-floating-pending-btn {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Same rounded style */
+    height: 40px;
+    width: 180px;
+    box-shadow: 0 10px 10px gray;
+}
+
+/* Message Button Style */
+.-bot197-floating-message-btn {
+    background-color: darkblue;
+    color: white;
+    border-radius: 25px; /* Same rounded style */
+    height: 40px;
+    width: 180px;
+    box-shadow: 0 10px 10px gray;
+}
+
+/* Hover Effects */
+.-bot197-floating-btn:hover {
+    transform: scale(1.1); /* Slight zoom on hover for all buttons */
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}

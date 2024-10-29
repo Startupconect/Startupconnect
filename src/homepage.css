@@ -1,0 +1,274 @@
+.home-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    padding: 20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column; /* Ensure content flows top to bottom */
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 20px; /* Space between top and bottom sections */
+  }
+  
+  .top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: left slider and right sliders */
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .main-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .main-slider img {
+    width: 100%; /* Fill the main slider */
+    height: 330px;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(128, 128, 128, 0.655);
+  }
+  
+  .box-sliders {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for the box sliders */
+    grid-template-rows: 1fr 1fr; /* Two rows for the box sliders */
+    
+  }
+  
+  .box-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+  .box-sliders img{
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(104, 104, 104, 0.667);
+  }
+  .key-initiative{
+    width: 80%;
+    background-color: rgb(213, 236, 255);
+    padding: 10px 20px 20px 20px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 1px 2px gainsboro;
+  }
+  .key-initiative h2{
+    color: rgb(255, 96, 33);
+    font-weight: bold;
+  }
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05); /* Adjust the scale value as needed */
+    }
+  }
+  .advertisement{
+    margin-top: 20px;
+    display: flex;
+    animation: zoomInOut 2s ease-in-out infinite;
+  }
+  .advertisement img{
+    border-radius: 20px;
+    box-shadow: 2px 2px  rgba(118, 118, 118, 0.543);
+    height:"100px";
+    width:"500px";
+    animation: easeInOutAnimation 2s ease-in-out infinite;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+  .Users{
+    margin-top: 50px;
+  }
+  .Users h2{
+    text-align: center;
+    text-shadow: 1px 0px grey;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-right: 100px;
+    margin-left: 60px;
+  }
+  
+  .card3 {
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    height: 150px;
+    width: 300px;
+    gap: 100px;
+    margin-left: 40px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  .clickdpiit{
+    margin-left: 80px;
+    background-color: #ffd53f;
+    border:none;
+    width: 250px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.457);
+    cursor: pointer;
+  }
+  
+  .card3:hover {
+    transform: scale(1.05);
+  }
+  .card3 p {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .card3 .count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6aff35; /* Green color for numbers */
+  }
+  
+  .card3:nth-child(1) {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/020/149/729/non_2x/graph-chart-with-moving-up-arrow-stock-market-financial-investment-diagram-on-blue-background-free-vector.jpg'); /* Background for investors card */
+    background-size: cover;
+  }
+  
+  .card3:nth-child(2) {
+    background-image: url("https://st2.depositphotos.com/4756885/9171/v/450/depositphotos_91717686-stock-illustration-vector-illustration-of-a-flat.jpg"); /* Background for startups card */
+    background-size: cover;
+  }
+  
+  .card3:nth-child(3) {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONf5HVHobTi4NbtbwgMQD9qZlg7sXmBLl3A&s"); /* Background for mentors card */
+    background-size: cover;
+  }
+  
+  .email-subscription{
+    display: block;
+    height: 100px;
+  }
+  .email-subscription input{
+    width: 250px;
+    height: 40px;
+    
+  }
+  .email-subscription button{
+    margin-right: 20px;
+    box-shadow: 2px 2px rgba(255, 59, 59, 0.525);
+  }
+  .email-subscription form button:hover{
+    background-color: #1a1a1a;
+
+  }
+.social-media-icons{
+  margin-top: 80px;
+}
+@keyframes updown {
+  0%, 100% {
+    transform: translateY(0); 
+}
+50% {
+    transform: translateY(-5px); 
+}
+}
+.email-subscription img{
+  height: 50px;
+  width: 50px;
+  margin-top: 5px;
+  mix-blend-mode: darken;
+  animation: updown 0.5s ease-in-out infinite;
+}
+.social-icons{
+  margin-right: 300px;
+  display: flex;
+  width: 80px;
+  height: 80px;
+}
+.social-icons img{
+  margin-right: 50px;
+  mix-blend-mode: darken;
+  height:60px;
+  width: 60px;
+}
+.social-icons img:hover{
+  transform: scale(1.1);
+  transition-duration: 0.25s;
+}
+.dpiit-endorsement-container68 {
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0px;
+  background-color: #f7f7f7;
+}
+
+.header-section68 {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  text-align: center;
+  background-color: #770597;
+  padding: 25px;
+  color: rgb(18, 16, 16);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+ 
+}
+
+.header-content68 h1 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #dddecd;
+}
+
+.header-content68 p {
+  font-size: 19px;
+  text-align: left;
+  margin-top: 10px;
+  color: #faf3f3;
+}
+
+.get-recognised-btn68 {
+  background-color: #b7d013;
+  color: rgb(28, 25, 25);
+  text-align: center;
+  background-position: left;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 80px;
+  box-shadow: 2px 2px rgba(128, 128, 128, 0.717);
+}
+
+.get-recognised-btn68:hover {
+  background-color: #343434;
+  color: white;
+}
+
+.header-logo68 {
+  width: 400px;
+}

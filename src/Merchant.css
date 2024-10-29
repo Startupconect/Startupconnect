@@ -1,0 +1,407 @@
+.merchant-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  height: 600px;
+}
+
+
+/* Filters Section */
+.filter-container {
+  background-color: #add8e6;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  height:fit-content;
+  box-shadow: 2px 2px grey;
+
+}
+
+.filter {
+  margin-bottom: 20px;
+  
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px grey;
+}
+
+.filter-content {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px grey;
+}
+
+.filter-item {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-item:last-child {
+  border-bottom: none;
+}
+
+.filter-container h2{
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px grey;
+}
+
+
+
+
+/* Product Section */
+.product-section {
+  width: 75%;
+  padding: 0 20px;
+}
+
+.search-bar {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: large;
+}
+.search-bar img:hover{
+  transform: scale(1.05);
+  transition-duration: 0.25s;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 950px;
+  height: 450px;
+  
+
+}
+.product-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  background-color: rgb(240, 235, 235);
+}
+
+.product-img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-right: 40px;
+}
+.product-img img{
+  width: 70px;
+  height: 70px;
+  mix-blend-mode: darken;
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.load-more90 {
+  margin-top: 60px;
+  padding: 10px 15px;
+  background-color: #9ab7e2;
+  color: black;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  font-size: medium;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.load-more90:hover{
+  background-color: #81c1eb;
+  transform: scale(1.05);
+transition-duration: 0.3s;
+}
+.filters button{
+  background-color: white;
+  color: black;
+  border: 1px solid grey;
+  width: 200px;
+  font-size: 15px;
+  border: none;
+  display: block;
+  text-align: left;
+  margin-left: 45px;
+  box-shadow: 2px 2px grey;
+}
+.filters span{
+  font-size: medium ;
+}
+.filters #span1{
+  padding-left:89px;
+}
+.filters #span2{
+  padding-left: 102px;
+}
+.filters #span3{
+  padding-left: 109px;
+}
+.filters #span4{
+  padding-left: 118px;
+}
+.merchant-image{
+  width: 100%;
+  height: 20%;
+}
+.merchant-image img{
+  height: 350px;
+  width: 100%;  
+}
+
+#merchant-profile-btn:hover{
+transform: scale(1.05);
+transition-duration: 0.3s;
+
+}
+
+#merchant-profile-btn{
+background-color: rgb(134, 217, 232);
+border-radius:5px;
+padding:5px;
+
+align-items: center;
+justify-content: center;
+width:90px;
+
+
+}
+
+
+
+.Top78 {
+margin-top: 30px;
+padding: 10px 15px;
+color: black;
+border-radius: 20px;
+cursor: pointer;
+width: 1200px;
+font-size:xx-large;
+font-weight: 900;
+height: 75px;
+font-family: 'Times New Roman', Times, serif;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.main{
+display: flex;
+position: relative;
+padding: 50px;
+text-align: center;
+}
+
+.logo1 {
+    min-height: 400px; /* Set a minimum height */
+    width: 40%;
+    margin: 30px;
+  }
+.logo1 img{
+height: 200px;
+width: 230px;
+border-radius:50%;
+
+position: relative;
+animation: flash 3s ease-in-out infinite;
+
+
+}
+@keyframes flash {
+0%, 100% {
+  opacity: 1;
+  transform: scale(1);
+}
+25% {
+  opacity: 0.3;
+  transform: scale(1.2);
+}
+50% {
+  opacity: 0.7;
+  transform: scale(0.8);
+}
+75% {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+}
+
+
+h1{
+margin-left: 10%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 60px;
+}
+.video-container {
+display: flex;
+margin-left: 10px;
+align-items: center;
+margin-top: 10px;
+width: 60%;
+height: 7%;
+
+}
+
+.video-player {
+width: 80%;
+max-width: 1000px;
+border: 3px solid #000;
+border-radius: 5px;
+border-bottom-right-radius:100px;
+background-color: #000;
+}
+
+.video-player {
+width: 100%; /* or specific width */
+height:auto; /* or specific height */
+}
+
+.video-player::-webkit-media-controls {
+display: none !important; /* Chrome/Safari */
+}
+
+.video-player::-moz-media-controls {
+display: none !important; /* Firefox */
+}
+
+.video-player {
+pointer-events: none; /* Optional: Disable interactions */
+}
+
+
+
+/* flip container */
+
+
+.main-container105 {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 60%;
+  margin-left: 25%;
+  background-color: rgb(115, 12, 115);
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.left-side105 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 350px; /* Ensure the left side remains compact */
+}
+
+.left-container105 {
+  width: 150px;
+  height: 70px;
+  border: 1px solid#020202;
+  position: relative;
+  font-family:'Times New Roman', Times, serif;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  padding: 8px;
+}
+
+.left-container105-1 {
+  background: linear-gradient(135deg, #f5e0c7, #e6c9a8); /* Light Sand to Warm Beige */
+}
+
+.left-container105-2 {
+  background: linear-gradient(135deg, #f5dcb8, #e5c3a1); /* Light Beige to Soft Camel */
+}
+
+.left-container105-3 {
+  background-color: #EAD8B2; /* Warm Sand */
+}
+
+.left-container105-4 {
+  background: linear-gradient(135deg, #f5e1b2, #dcb894); /* Pale Yellow Sand to Camel */
+}
+
+.left-container105-5 {
+  background-color: #F0D7B6; /* Soft Sand */
+}
+
+.left-container105-6 {
+  background-color: #E7C8A3; /* Warm Sandy Beige */
+}
+
+.right-side105 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+}
+
+.right-container105 {
+  width: 100%;
+  height: 80%;
+  border: 1px solid#000000;
+  display: flex;
+  border-radius: 20px;
+  font-family:'Times New Roman', Times, serif;
+  background-color: darkgray;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.front-content105 {
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.back-content105 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.back-content-placeholder105 {
+  font-size: 1.5rem;
+  color: #000000;
+  text-align: center;
+
+}
+
+/* Hover effect to control the front content visibility */
+.left-container105:hover {
+  transform: scale(1.05);
+  transition-duration: 0.3s;
+}
+
+.right-container105 {
+  animation: easeInOutAnimation 2s ease-in-out infinite;
+  }

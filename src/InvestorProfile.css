@@ -1,0 +1,355 @@
+/* Styling for the profile page */
+.profile-page22 {
+  font-family: Arial, sans-serif;
+}
+.top-banner22 {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.banner-image22 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text22 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  text-align: center;
+}
+
+.banner-text22 h1 {
+  font-size: 48px;
+  margin: 0;
+  color: white;
+}
+
+.banner-text22 p {
+  font-size: 20px;
+  margin: 0;
+}
+.free122{
+  color: black;
+  text-align: center;
+}
+/* Header section */
+.header22 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #d6d4f1;
+}
+
+.logo-section22 {
+  display: flex;
+  align-items: center;
+}
+
+.logo22 {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.site-info22 h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.site-info22 p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.search-section22 {
+  display: flex;
+  align-items: center;
+}
+
+.search-input22 {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.search-button22,
+.voice-search-button22 {
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.user-options22 button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #6b73ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Navbar */
+.navbar22 {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.navbar22 a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+
+/* Investor Profile Section */
+.investor-profile22 {
+  padding: 20px;
+}
+
+.investor-banner22 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.investor-banner22 h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.investor-details22 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-section22 h3 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.contact-info22 p {
+  margin: 5px 0;
+}
+
+.right-section22 img {
+  width: 100px;
+}
+
+/* Container */
+.container22 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Left Section */
+.left-section22 {
+  width: 35%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-section22 {
+  margin-bottom: 15px;
+}
+
+.section-title22 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #e47878;
+  margin-bottom: 5px;
+}
+
+.read-more22 {
+  font-size: 12px;
+  color: #6b73ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Right Section */
+.right-section22 {
+  width: 55%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover */
+}
+
+.right-section22:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info22 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering image and text */
+  text-align: center;
+}
+
+.avatar22 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  animation: bounce 0.6s ease-in-out infinite alternate; /* Animation for the image */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.rating22 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.free22 {
+  color: #f80404;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.free22:hover {
+  color: #ff6347;
+}
+
+/* Additional styling for icons */
+.fa-phone22, .fa-envelope22 {
+  margin-right: 10px;
+}
+
+
+/* Tie-up Section */
+.tie-up-section22 {
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+  background-color: #d6d4f1;
+  border-radius: 15px;
+  transition: transform 0.1s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.tie-up-section22:hover{
+  background-color: #6b73ff;
+}
+
+.handshake-icon22 {
+  font-size: 40px;
+}
+
+/* About Section */
+.about-section22 {
+  text-align: left;
+  margin-top: 20px;
+}
+.about-section22 h3{
+  padding-bottom: 10px;
+
+}
+
+
+.invest-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px; /* Adjust width for pill shape */
+  height: 50px; /* Adjust height for pill shape */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  transition: transform 0.3s ease;
+  mix-blend-mode: multiply;
+  margin-right: 20px;
+  animation: float 2s ease-in-out infinite;
+  border-radius: 25px; /* Rounded shape */ 
+}
+
+/* General Button Styles for all buttons */
+.invest-floating-btn-common {
+  width: 200px; /* Ensuring consistent width */
+  height: 50px; /* Consistent height */
+  border-radius: 25px; /* Pill shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px; /* Adjust text size */
+  
+}
+
+/* Connect Button Style */
+.invest-floating-connect-btn {
+  background-color: #0073b1;
+  color: white;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+}
+
+/* Pending Button Style */
+.invest-floating-pending-btn {
+  background-color: #f0f0f0;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+}
+
+/* Message Button Style */
+.invest-floating-message-btn {
+  background-color: darkblue;
+  color: white;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+}
+
+/* Hover Effects */
+.invest-floating-btn:hover {
+  transform: scale(1.1); /* Slight zoom on hover for all buttons */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

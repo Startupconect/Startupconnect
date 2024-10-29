@@ -1,0 +1,126 @@
+.subscription-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  height:600px;
+  width: 100%;
+  background-image: url('https://img.freepik.com/free-psd/3d-render-finance-background_23-2151394236.jpg?t=st=1727866527~exp=1727870127~hmac=e6ed62464f7a7c63e784e5f5e3f43d573a67b5b8224b8a605ecdf30bde4e3f3e&w=900');
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.plans-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.plan {
+  background: #fff;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  
+}
+
+.plan.basic {
+  border-top: 10px solid orange;
+  border-bottom: 10px solid orange ;
+  box-shadow: 2px 2px grey;
+ 
+}
+
+.plan.standard {
+  border-top: 10px solid blue;
+  border-bottom: 10px solid blue;
+  box-shadow: 2px 2px grey;
+}
+
+.plan.premium {
+  border-top: 10px solid purple;
+  border-bottom: 10px solid purple;
+  box-shadow: 2px 2px grey;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.plan ul li {
+  margin-bottom: 10px;
+}
+
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.price1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: orange;
+}
+
+.price2{
+    font-size: 20px;
+    font-weight: bold; 
+    color: blue;
+}
+
+.price3{
+    font-size: 20px;
+    font-weight: bold; 
+    color: purple;
+}
+
+.price span {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+.plan1{
+    width:100px;
+    margin-left: 50px;
+}
+
+.plan.basic ul li{ 
+    text-align: left;
+}
+.plan.standard ul li{ 
+    text-align: left;
+}
+.plan.premium ul li{ 
+    text-align: left;
+}
+
+.plan.premium:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
+.plan.basic:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
+.plan.standard:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}

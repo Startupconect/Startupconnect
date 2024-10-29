@@ -1,0 +1,262 @@
+*{font-family: 'Georgia';}
+body {
+    background-color: #f9f9f9;
+}
+
+.contact-us-page1 .section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.first-section1 {
+    background-color:white;
+    padding:40px;
+}
+ 
+.bottom-section1{
+    background: linear-gradient(135deg, #D894D2, #CBCDF6);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px #e3e3e3;
+    margin:20px ;
+}
+
+.first-section1 .text1, .bottom-section1 .contact-info1 {
+    flex: 1;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.text90 h1{
+   margin-left: 0%;
+   margin-left: 50px;
+}
+
+.first-section1 .image1, .bottom-section1 .image1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image2{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.middle-section1 {
+    display: flex;
+    padding: 30px;
+    background-color: #f2f2f2;
+}
+
+.form-container1 {
+    flex: 2.5;
+    padding: 40px;
+    border-radius:20px;
+    border-right:20px solid #0f0e0e; 
+    border-top:20px solid #0f0e0e; 
+    border-bottom: 20px solid #0f0e0e;
+    background-color: white;
+
+}
+
+.form-container1 form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-row1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row1 input, .form-row1 textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-row1 input:hover{
+    background:linear-gradient(135deg, #D894D2, #CBCDF6);
+}
+
+.form-row1 textarea:hover{
+    background:linear-gradient(135deg, #D894D2, #CBCDF6);
+} 
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+#contact-submit1 {
+    padding: 10px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+#contact-submit1:hover{
+    background-color: #ab68fd;
+
+}
+.form-image1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-image1 img{
+    height: 600px;
+    margin-left:0%;
+    flex: 1.5;
+
+}
+
+.image1 img{
+    max-width: 50%;
+    height: auto;
+}
+
+
+
+.form-image2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-image2 img{
+    height: 600px;
+    margin-left:0%;
+    flex: 1.5;
+
+}
+
+.image2 img{
+    max-width: 50%;
+    height: auto;
+}
+
+.image2 {
+    animation: fadeOut 3s ease forwards; /* Apply the animation */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+.mailfig1 img{
+    max-width: 100px; /* Set the image width */
+    margin-right: 10px; /* Space between the image and the text */
+  }
+  
+  .mailfig1 {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-left: 260px;
+  }
+  
+  
+.mailfig1 p{
+    margin: 0; /* Remove extra margin from paragraph */
+    font-size: 30px;
+
+}
+
+.contact-info1 {
+    flex: 1;
+}
+
+.contact-info1 p{
+    margin-top: 0%;
+    margin-left:100px ;
+}
+
+@media (max-width: 768px) {
+    .contact-us-page1 .section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-row1 {
+        flex-direction: column;
+    }
+}
+
+
+.faq-floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    mix-blend-mode: multiply;
+    margin-right: 20px;
+    animation: float 2s ease-in-out infinite; /* Floating animation */
+}
+
+/* Hover effect */
+.faq-floating-button:hover {
+    transform: scale(1.1);
+}
+
+/* Icon styling */
+.faq-icon {
+    width: 100px;
+    height: auto;
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the height of the float */
+    }
+}
+
+/* Prevent the button from going over the footer */
+footer {
+    position: relative;
+}
+
+.faq-floating-button {
+    bottom: calc(100px + 60px); /* Adjust to keep the button above the footer */
+}
+
+
+
+
+
+  
+ 

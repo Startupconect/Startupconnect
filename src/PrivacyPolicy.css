@@ -1,0 +1,113 @@
+/* Page Background with Gradient Color */
+.page-container {
+  background: linear-gradient(to bottom right, rgb(241, 173, 241), rgb(124, 195, 250));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container with Animated Border */
+.privacy-policy-container {
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 50px;
+  padding: 20px;
+  border: 6px solid;
+  box-shadow: 0 0 12px grey;
+  background-color: white;
+  border-image-source: linear-gradient(90deg, black, gold);
+  border-image-slice: 1;
+  animation: borderAnimation98 3s infinite; /* Animation */
+}
+
+@keyframes borderAnimation98 {
+  0% {
+    border-image-source: linear-gradient(90deg, black, gold);
+  }
+  50% {
+    border-image-source: linear-gradient(90deg, black, goldenrod);
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, black, darkgoldenrod);
+  }
+}
+
+
+
+/* Title Styles */
+.privacy-policy-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Section Styles */
+.section {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+/* Header for Each Section */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 20px; /* Space around the header */
+}
+
+/* Section Header Title */
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  flex: 1; /* Take up available space */
+}
+
+/* Book Icon Styles */
+.arrow {
+  font-size: 24px; /* Increase icon size for better visibility */
+  color: #333; /* Set icon color */
+  transition: transform 0.3s ease; /* Smooth rotation transition */
+  border: none; /* Ensure no border is applied */
+  background: none; /* Ensure no background is applied */
+  padding: 0; /* Remove any padding */
+}
+
+/* Rotate down icon for expanded sections */
+.arrow.down {
+  transform: rotate(0deg); /* No rotation needed */
+}
+
+.arrow.right{
+    width: 5px;
+    margin-left: 80px;
+}
+
+/* Section Content Styles */
+/* Section Content Styles with Animation */
+.section-content {
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin: 10px 0;
+  color: #333;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from 50px left */
+  animation: slideIn 0.5s forwards ease-out; /* Animation definition */
+}
+
+/* Keyframes for slide-in animation from left to right */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); /* Starts 50px to the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Ends at the original position */
+  }
+}

@@ -1,0 +1,180 @@
+.application-statusK0012 {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(249, 246, 246, 0.1);
+  background-color: #ad9781;
+  animation: fadeInK0012 1s ease-in-out;
+}
+
+h1.K0012 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #080707;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1.K0012 svg {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+h2.K0012 {
+  color: #16116d;
+  display: flex;
+  align-items: center;
+}
+
+h2.K0012 svg {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.applicant-detailsK0012, .status-overviewK0012, .progress-trackerK0012, .next-stepsK0012, .notificationsK0012, .support-contactK0012 {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(234, 238, 240);
+  transition: transform 0.9s;
+}
+
+.applicant-detailsK0012:hover, 
+.status-overviewK0012:hover, 
+.progress-trackerK0012:hover, 
+.next-stepsK0012:hover, 
+.notificationsK0012:hover, 
+.support-contactK0012:hover {
+  transform: translateY(-2px);
+  box-shadow: 12px 4px 8px rgba(243, 111, 3, 0.2);
+}
+
+ul.K0012 {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.K0012 {
+  padding: 8px 0;
+}
+
+.completedK0012 {
+  color: green;
+  font-weight: bold;
+}
+
+.in-progressK0012 {
+  color: rgb(219, 78, 3);
+  font-weight: bold;
+}
+
+.back-buttonK0012, .download-buttonK0012 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button.K0012 {
+  background-color: #a40f61;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+button.K0012 svg {
+  margin-right: 8px;
+}
+
+button.K0012:hover {
+  background-color: #0d080e;
+  transform: scale(1.05);
+}
+
+.roadmapK0012 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.roadmap-stepK0012 {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.roadmap-stepK0012:hover {
+  transform: scale(1.1);
+}
+
+.step-circleK0012 {
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.completedK0012 .step-circleK0012 {
+  background-color: #4caf50;
+  color: white;
+}
+
+.in-progressK0012 .step-circleK0012 {
+  background-color: #c7571f;
+  color: white;
+}
+
+.step-labelK0012 {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.roadmapK0012::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 14%;
+  right: 14%;
+  height: 5px;
+  background-color: #3a3636;
+  z-index: -1;
+}
+
+/* Additional Options */
+.additional-optionsK0012 {
+  margin-top: 20px;
+}
+
+.upload-fileK0012 {
+  margin-top: 10px;
+}
+
+.upload-fileK0012 label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-fileK0012 label svg {
+  margin-right: 8px;
+}
+
+/* Animation */
+@keyframes fadeInK0012 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

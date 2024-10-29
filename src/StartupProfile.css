@@ -1,0 +1,412 @@
+
+/* top containenr */
+/* Button.css */
+.custom-button {
+  position: relative;
+  background-color: #4f46e5; /* bg-neutral-800 */
+  height: 16rem; /* h-16 */
+  width: 78rem; /* w-64 */
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 0.75rem; /* p-3 */
+  color: #f9fafb; /* text-gray-50 */
+  font-size: 6rem; /* text-base */
+  font-weight: 700; /* font-bold */
+  
+  overflow: hidden;
+  transition: all 0.5s; /* duration-500 */
+  text-decoration: underline;
+  text-underline-offset: 0.5rem; /* underline-offset-2 */
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.custom-button:hover {
+  color: #657cef; /* text-rose-300 */
+  border-color: #0818ca; /* hover:border-rose-300 */
+  text-decoration-thickness: 0.125rem; /* hover:decoration-2 */
+  text-underline-offset: 1rem; /* hover:underline-offset-4 */
+}
+
+.custom-button:before, .custom-button:after {
+  content: '';
+  position: absolute;
+  border-radius: 9999px;
+  transition: all 0.5s; /* duration-500 */
+  z-index: 10;
+  filter: blur(0.375rem); /* blur-lg */
+}
+
+.custom-button:before {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  top: 0.25rem; /* top-1 */
+  right: 0.25rem; /* right-1 */
+  background-color: #8b5cf6; /* bg-violet-500 */
+}
+
+.custom-button:after {
+  width: 5rem; /* w-20 */
+  height: 5rem; /* h-20 */
+  top: 0.75rem; /* top-3 */
+  right: 2rem; /* right-8 */
+  background-color: #289cdb; /* bg-rose-300 */
+}
+
+.custom-button:hover:before {
+  right: 3rem; /* hover:before:right-12 */
+  bottom: -2rem; /* hover:before:-bottom-8 */
+  box-shadow: 20px 20px 20px 30px #a21caf; /* hover:before:[box-shadow] */
+}
+
+.custom-button:hover:after {
+  right: -2rem; /* hover:after:-right-8 */
+}
+
+
+
+
+/* Container for the overall layout */
+.startup-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Top Section - Banner */
+.start-img-container {
+  width: 100%;
+  text-align: center;
+}
+
+.start-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Middle Section - Profile and Gallery */
+.startup-middle-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.startup-left-section,
+.startup-right-section {
+  width: 48%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.startup-details-card,
+.startup-gallery-card {
+  background: linear-gradient(135deg, #d9e4f5, #a3c4f3);
+  padding: 20px;
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Adjusted to remove excessive space */
+}
+
+.startup-details-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dipp-recognized {
+  background-color: #add8e6; /* Light Sky Blue */
+  color: #003d4d; /* Dark Teal */
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  width: 30%;
+}
+
+
+.start-img-container img {
+  height: 250px;
+}
+
+.startup-description {
+  margin-bottom: 20px;
+}
+
+.startup-info-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-block {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+.info-value {
+  display: block;
+}
+
+.gallery-placeholder {
+  background-color: #e9ecef;
+  padding: 40px;
+  text-align: center;
+  border: 2px dashed #ccc;
+  margin-bottom: 20px;
+}
+
+.join-date {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Bottom Section - Stages of Startups */
+.startup-bottom-section {
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto; /* Center the section horizontally */
+  margin-bottom: 20px; /* Adjusted to reduce space at the bottom */
+}
+
+.stages-grid {
+  display: flex;
+  justify-content: space-around; /* Adjusted to space boxes evenly */
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+  margin-top: 20px; /* Spacing above the stages grid */
+}
+
+.stage-box {
+  width: 22%; /* Adjusted width for better spacing on smaller screens */
+  perspective: 1000px;
+  margin: 10px; /* Added margin for spacing between boxes */
+  transition: transform 0.5s; /* Smooth transition effect */
+}
+
+.stage-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.stage-box:hover .stage-box-inner {
+  transform: rotateY(180deg);
+}
+
+.stage-box-front,
+.stage-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 150px; /* Ensures consistent height across boxes */
+}
+
+.stage-box-front {
+  background: linear-gradient(135deg, #d6e9f5, #a0c8f3);
+  color: black; /* Ensure text color contrasts with the background */
+}
+
+.stage-box-back {
+  background: linear-gradient(135deg, #B0E0E6, #F5F5F5);
+  color: black; /* Ensure text color contrasts with the background */
+  transform: rotateY(180deg);
+}
+
+/* Container setup */
+.parent-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px; /* Adjusted padding for better spacing */
+  position: relative;
+  height:40%; /* Adjusted height to ensure flipping works properly */
+  align-items: center;
+  margin-top: 20px; /* Space above the parent container */
+}
+
+.flip-card {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* This gives the 3D perspective */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.flip-card-front {
+  background-color: #74ebd5;
+  color: black;
+}
+
+.flip-card-back p{
+padding: 20px;
+}
+
+.flip-card-back {
+  background-color: #acb6e5;
+  color: white;
+  transform: rotateY(180deg); /* Ensures back is rotated properly */
+}
+
+/* Gradients for each container */
+.flip-card:nth-child(1) .flip-card-front {
+  background: linear-gradient(135deg, #d6e9f5, #a0c8f3);
+}
+
+.flip-card:nth-child(2) .flip-card-front {
+  background: linear-gradient(135deg, #cfe3f5, #9ab7e2);
+}
+
+.flip-card:nth-child(3) .flip-card-front {
+  background: linear-gradient(135deg, #b3d6f5, #8aaee2);
+}
+
+.flip-card:nth-child(4) .flip-card-front {
+  background: linear-gradient(135deg, #e1f2f5, #c2dff3);
+}
+
+/* Hide the inactive cards */
+.flip-card.inactive {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Center the active card */
+.flip-card.active {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 300px;
+  height: 300px;
+}
+
+
+.statup-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px; /* Adjust width for pill shape */
+  height: 50px; /* Adjust height for pill shape */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  transition: transform 0.3s ease;
+  mix-blend-mode: multiply;
+  margin-right: 20px;
+  animation: float 2s ease-in-out infinite;
+  border-radius: 25px; /* Rounded shape */ 
+}
+
+/* General Button Styles for all buttons */
+.statup-floating-btn-common {
+  width: 200px; /* Ensuring consistent width */
+  height: 50px; /* Consistent height */
+  border-radius: 25px; /* Pill shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px; /* Adjust text size */
+  
+}
+
+/* Connect Button Style */
+.statup-floating-connect-btn {
+  background-color: #0073b1;
+  color: white;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+
+/* Pending Button Style */
+.statup-floating-pending-btn {
+  background-color: #f0f0f0;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+
+/* Message Button Style */
+.statup-floating-message-btn {
+  background-color: darkblue;
+  color: white;
+  border-radius: 25px; /* Same rounded style */
+  height: 40px;
+  width: 180px;
+  box-shadow: 0 10px 10px gray;
+  margin-top: 50px;
+  margin-left: 30%;
+}
+
+/* Hover Effects */
+.statup-floating-btn:hover {
+  transform: scale(1.1); /* Slight zoom on hover for all buttons */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
