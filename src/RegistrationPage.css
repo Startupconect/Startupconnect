@@ -148,7 +148,11 @@
     border: none;
     margin-left: 80px;
   }
+  #name{
+    margin-left: 40px;
+  }
   #email{
+    margin-top: 30px;
     margin-right: 108px;
     width: 200px;
   }
@@ -208,6 +212,7 @@ a{
   mix-blend-mode: difference;
 }
 .verify-button{
+  background-color: #70e450;
   border-radius: 20px;
   height: 40px;
   width: 20%;
@@ -239,4 +244,12 @@ a{
   color: green;
   margin-top: 10px;
   margin-left: 20px;
+}
+.btn-login{
+  height: 30px;
+  width: 100px;
+  margin-top: 20px;
+  background-color: #56dd30;
+  border: none;
+  border-radius: 15px;
 }
