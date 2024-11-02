@@ -1,0 +1,185 @@
+
+/* InvestorRegistration.css */
+
+/* General Layout */
+.investor-registration5566 {
+  background-color: #f7f9fc;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Progress Bar */
+.progress-bar5566 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.progress-step5566 {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.progress-step5566 .circle5566 {
+  width: 30px;
+  height: 30px;
+  background-color: #c4d4e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.progress-step5566.active5566 .circle5566 {
+  background-color: #4a90e2;
+}
+
+.progress-step5566 p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Form Content */
+.form-content5566 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-field5566, .select-field5566 {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #c4d4e1;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.input-field5566:focus, .select-field5566:focus {
+  border-color: #4a90e2;
+}
+
+.select-field5566 {
+  background-color: #fff;
+  color: #333;
+}
+
+.error-message5566 {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  background: #fdd;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Focus Areas */
+.focus-areas5566 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.focus-area-label5566 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a90e2;
+}
+
+.checkbox5566 {
+  accent-color: #4a90e2;
+}
+
+/* Investment Stages */
+.investment-stages5566 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.investment-stage-label5566 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a90e2;
+}
+
+.radio5566 {
+  accent-color: #4a90e2;
+}
+
+/* Confirmation Section */
+.confirm-button5566 {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-button5566:hover {
+  background-color: #357ab8;
+}
+
+/* Navigation Buttons */
+.navigation-buttons5566 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.navigation-button5566 {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.navigation-button5566:disabled {
+  background-color: #c4d4e1;
+  cursor: not-allowed;
+}
+
+.navigation-button5566:hover:enabled {
+  background-color: #357ab8;
+}
+
+/* Dashboard Button */
+.dashboard-button5566 {
+  background-color: #5cb85c;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.dashboard-button5566:hover {
+  background-color: #4cae4c;
+}

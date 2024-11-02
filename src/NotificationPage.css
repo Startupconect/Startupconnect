@@ -1,0 +1,162 @@
+.notification-modal6070 {
+  position: fixed;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1000;
+  animation: fadeIn6070 0.5s ease;
+}
+@keyframes fadeIn6070 {
+  from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+  }
+  to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
+
+.notification-header6070 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e90b8; /* Blue background */
+  color: rgb(244, 242, 242); /* White text */
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0; /* Rounded top corners */
+  box-shadow: 0 2px 4px rgba(234, 226, 226, 0.1);
+}
+
+.close-button6070 {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: rgb(21, 20, 20); /* White color */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button6070:hover {
+  color: #060605; /* Bright yellow on hover */
+}
+
+.notification-filters6070 {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.notification-filters6070 button {
+  padding: 10px 18px;
+  border: none;
+  background: #273e58; /* Darker blue */
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.notification-filters6070 button:hover {
+  background: #0d47a1; /* Even darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.notification-filters6070 button.active {
+  background: #024f97; /* Light blue for active */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.notification-list6070 {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.notification-item6070 {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #ffffff; /* White background */
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.notification-item6070:hover {
+  transform: scale(1.02);
+}
+
+.notification-item6070.read {
+  background-color: #633232; /* Light gray for read items */
+}
+
+.notification-item6070.unread {
+  background-color: #e3f2fd; /* Light blue for unread items */
+  border-left: 4px solid #022745;
+  cursor:pointer;
+}
+
+.notification-icon6070 {
+  margin-right: 15px;
+  font-size: 1.2em;
+  color: #0a3c65; /* Blue icon */
+}
+
+.notification-content6070 p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #141313; /* Dark gray for text */
+}
+
+.notification-content6070 .notification-date6070 {
+  font-size: 0.8em;
+  color: #666; /* Medium gray for date */
+  margin-top: 5px;
+}
+
+.notification-actions6070 {
+  margin-left: auto;
+  display: flex;
+}
+
+.notification-actions6070 button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 0.85em;
+  color: #2196f3; /* Blue text */
+  background-color: transparent;
+  border: 1px solid #2196f3; /* Blue border */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.notification-actions6070 button:hover {
+  background-color: #2196f3; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+.accept-button6070 {
+  padding: 6px 12px;
+  font-size: 0.85em;
+  color: #4caf50; /* Green text */
+  background-color: #e8f5e9; /* Light green background */
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.accept-button6070:hover {
+  background-color: #c8e6c9; /* Darker light green on hover */
+  color: #2e7d32; /* Darker green text */
+  transform: scale(1.05);
+}

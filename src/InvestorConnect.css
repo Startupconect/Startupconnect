@@ -18,7 +18,7 @@
 .top-banner4 {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -63,7 +63,6 @@
   transform: translateY(-5px); /* Subtle lift */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
-
 
 .investor-count-card4 {
   padding: 15px;
@@ -200,25 +199,14 @@
   width: 100%; /* Make sure content fills card width */
 }
 
-.investor-card-line34 {
-  border: none;
-  border-top: 2px solid #ddd; /* Style for the line */
-  margin-bottom: 15px;
-  margin-top: 15px;
-  width: 140%; /* Set the width to 100% to span the entire card */
-
-
-}
-
-
 .avatar34 {
   margin-right: 20px; /* More space between image and text */
 }
 
 .avatar34 img {
   border-radius: 50%;
-  width: 60px; /* Increase avatar size */
-  height: 60px;
+  width: 80px; /* Increase avatar size */
+  height: 80px;
   transition: transform 0.4s ease;
   margin-bottom: 0;
   display: block;
@@ -266,23 +254,6 @@
       transform: translateY(0);
   }
 }
-
-.view-profile-btn34 {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-  text-align: center;
-  margin-left: 65px;
-}
-
-.view-profile-btn34:hover {
-  background-color: #0056b3;
-}
-
 
 .investor-card34:hover {
   transform: scale(1.08); /* Slightly larger hover effect */
@@ -497,8 +468,81 @@ color: #0abde3; /* Soft cyan text color on hover for accent */
   }
 }
 
-.investment-range {
- 
-  color: #989998; /* Change color as needed */
-  margin: 5px 0;
+.services-container4 {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-grid4 {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.service-item4 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.service-item4:hover {
+  transform: translateY(-10px); /* Moves the card slightly up on hover */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow on hover */
+}
+
+.service-icon4 {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* Smooth animation for the icon */
+}
+
+.service-item4:hover .service-icon4 {
+  transform: rotate(360deg); /* Rotate the icon when hovering over the service item */
+}
+
+.service-divider4 {
+  width: 40px;
+  height: 3px;
+  background-color: #f57c00;
+  margin: 10px auto;
+}
+
+.service-item4 h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-item4 p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-grid4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item4 {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+.services-title4{
+  padding-bottom: 50px;
 }

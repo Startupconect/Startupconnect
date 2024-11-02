@@ -64,7 +64,7 @@ const LoginPage = () => {
 
       if (response.ok) {
         alert("Login Sucessful:",data);
-        navigate("/dashboard"); // Redirect to the dashboard or home page
+        navigate("/RegistartionHome"); // Redirect to the dashboard or home page
       } else {
         setErrorMessage(data.message || "Login failed! Please check your credentials.");
       }
@@ -133,6 +133,7 @@ const LoginPage = () => {
               </span>
             </div>
             <input
+              id="captcha-input"
               type="text"
               value={captchaInput}
               onChange={(e) => setCaptchaInput(e.target.value)}
@@ -140,7 +141,7 @@ const LoginPage = () => {
               required
             />
 
-            <button type="button" className="verify-btn" onClick={handleVerifyCaptcha}>
+            <button type="button" className="verify-button123" onClick={handleVerifyCaptcha}>
               Verify CAPTCHA
             </button>
             {captchaError && <p className="captcha-error">{captchaError}</p>}

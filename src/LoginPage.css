@@ -154,20 +154,24 @@
   cursor: pointer;
 }
 
-.verify-btn {
+.verify-button123 {
   margin-top: 10px;
-  background-color: #4caf50;
+  margin-left: 20px;
+  background-color:#1fc827 ;
   color: white;
   border: none;
-  border-radius: 0px;
-  height: 40px;
-  width: 150px;
   border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  margin-left: 10px;
+  height: 40px;
 }
-.verify-btn:hover {
-  background-color: #45a049;
+
+.verify-button123:hover {
+  background-color: #50b553;
+}
+#captcha-input{
+ height: 40px;
+ margin-top: 15px;
 }
 
 

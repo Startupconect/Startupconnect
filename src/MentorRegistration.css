@@ -1,0 +1,368 @@
+*{
+    font-family:"Georgia";
+}
+
+.mentor-registration62 {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.progress-bar62 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.progress-step62 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.circle62 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.progress-step62.active .circle62 {
+    background-color: #4CAF50;
+}
+
+.form-content62 h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.navigation-buttons62 {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px;
+}
+
+.navigation-buttons62 button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 10px; /* Add some spacing between buttons */
+}
+
+.navigation-buttons62 button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.navigation-buttons62 button:not(:disabled) {
+    background-color: #4CAF50;
+}
+
+.mentor-details62 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mentor-left62 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 48%;
+}
+
+.stage-checkboxes62 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mentor-right62 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 48%;
+}
+
+.upload-button62 {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logo-toggle62 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mentor-middle62 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mentor-bottom62 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.mentor-bottom-left62, .mentor-bottom-right62 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+}
+
+.input-field62 {
+    width: 48%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.about-mentor62 {
+    display: flex;
+    gap: 20px;
+}
+
+.left-section62, .right-section62 {
+    flex: 1;
+}
+
+.upload-picture62 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.upload-picture62 input[type="file"] {
+    display: none;
+}
+
+.upload-picture62 button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.uploaded-image62 {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.checkbox-group62 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-info62 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-left62, .contact-right62 {
+    width: 48%; /* Adjust width as needed */
+}
+
+.input-field62 {
+    width: 100%; /* Ensures inputs take the full width */
+    margin: 8px 0;
+}
+
+.terms-conditions62 {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+/* Styles for Upload Picture */
+.upload-button62 {
+    width: fit-content; /* Adjust button width */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+.upload-input62 {
+    display: none; /* Hide default file input */
+}
+
+/* Styles for Contact Info Fields */
+.contact-info-container62 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-left62,
+.contact-right62 {
+    width: 48%; /* Adjust width as needed */
+}
+
+/* Styles for Additional Input Fields */
+.additional-input62 {
+    width: 100%;
+    margin-top: 10px; /* Space between fields */
+}
+
+.tie-inputs62 {
+    padding: 15px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tie-inputs162 {
+    padding: 15px;
+}
+.network-input62 {
+    gap: 20px;
+    padding: auto;
+}
+
+/* Container for the 'Success Stories?' checkbox and its details */
+.top-container62 {
+    margin-bottom: 20px;
+}
+
+/* Checkbox label for 'Success Stories?' */
+.top-container62 label {
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Success Stories Details section, shown only if checkbox is checked */
+.success-stories-details62 {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.success-stories-details62 h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for each input field inside Success Stories Details */
+.input-field62 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-field62::placeholder {
+    color: #888;
+}
+
+/* Bottom container styling */
+.bottom-container62 {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.bottom-container62 label {
+    font-size: 14px;
+    color: #333;
+}
+
+.bottom-container62 input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-field62 {
+        font-size: 12px;
+    }
+
+    .success-stories-details62 h3,
+    .top-container62 label {
+        font-size: 16px;
+    }
+}
+
+/* Styles for Review Details Step (Step 5) */
+.review-details62 {
+    border: 1px solid #4CAF50; /* Green border to highlight review section */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    margin-top: 20px; /* Space above the review section */
+}
+
+.review-details62 h2 {
+    font-size: 24px; /* Larger title font */
+    margin-bottom: 15px; /* Space below title */
+    color: #333; /* Darker text color for better readability */
+}
+
+.review-details62 h3 {
+    font-size: 20px; /* Section title font size */
+    margin-top: 15px; /* Space above section titles */
+    margin-bottom: 10px; /* Space below section titles */
+    color: #4CAF50; /* Green color for section titles */
+}
+
+.review-details62 p {
+    font-size: 16px; /* Standard text size */
+    margin-bottom: 8px; /* Space between paragraphs */
+    color: #555; /* Slightly lighter color for content */
+}
+
+/* Style for the Submit button on the Review Step */
+.review-submit-button62 {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Button font size */
+    transition: background-color 0.3s; /* Transition effect on hover */
+}
+
+.review-submit-button62:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive adjustments for review details */
+@media (max-width: 768px) {
+    .review-details62 {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .review-details62 h2,
+    .review-details62 h3,
+    .review-details62 p {
+        font-size: 14px; /* Smaller font sizes on mobile */
+    }
+}

@@ -47,36 +47,37 @@ const Dpiit2= () => {
     <div className="N009criteria-grid">
       <div className="N009criteria-item">
         <div className="N009criteria-header">
+        <img src="\images\dd2.png" alt="Company Age Icon" className="N009circle-logo" />
           <h3>Company Age</h3>
-          <img src="\images\dd2.png" alt="Company Age Icon" className="N009circle-logo" />
+        
         </div>
         <p>Your business must be less than 10 years old from the date of incorporation.</p>
       </div>
       <div className="N009criteria-item">
         <div className="N009criteria-header">
+        <img src="\images\dd1.png" alt="Company Formation Icon" className="N009circle-logo" />
           <h3>Company Formation</h3>
-          <img src="\images\dd1.png" alt="Company Formation Icon" className="N009circle-logo" />
         </div>
         <p>Your company must be structured as a Private Limited Company, a Registered Partnership Firm, or a Limited Liability Partnership.</p>
       </div>
       <div className="N009criteria-item">
         <div className="N009criteria-header">
+        <img src="\images\dd5.png" alt="Revenue Requirement Icon" className="N009circle-logo" />
           <h3>Revenue Requirement</h3>
-          <img src="\images\dd5.png" alt="Revenue Requirement Icon" className="N009circle-logo" />
         </div>
         <p>Your company's annual turnover must not exceed INR 100 crore in any financial year.</p>
       </div>
       <div className="N009criteria-item">
         <div className="N009criteria-header">
+        <img src="\images\dd3.png" alt="Unique Entity Icon" className="N009circle-logo" />
           <h3>Unique Entity</h3>
-          <img src="\images\dd3.png" alt="Unique Entity Icon" className="N009circle-logo" />
         </div>
         <p>The entity must be newly formed, not created by restructuring or splitting an existing business.</p>
       </div>
       <div className="N009criteria-item">
         <div className="N009criteria-header">
+        <img src="\images\dd4.png" alt="Creativity Icon" className="N009circle-logo" />
           <h3>Creativity & Scalability</h3>
-          <img src="\images\dd4.png" alt="Creativity Icon" className="N009circle-logo" />
         </div>
         <p>The startup must aim to enhance products or services and have scalable business models.</p>
       </div>
@@ -141,10 +142,11 @@ const Dpiit2= () => {
       )}
 
       <div className="N009content">
+        {/* Only show content if a section is active */}
         {activeSection && (
           <div>
             <div className="N009objective">
-              <h3 onClick={() => toggleSection('objective')}>
+              <h3 onClick={() => handleSidebarClick('objective')}>
                 A. Objective{' '}
                 <button className="N009dropdown-btn">{activeSection === 'objective' ? '▲' : '▼'}</button>
               </h3>
@@ -156,7 +158,7 @@ const Dpiit2= () => {
             </div>
 
             <div className="N009objective">
-              <h3 onClick={() => toggleSection('benefits')}>
+              <h3 onClick={() => handleSidebarClick('benefits')}>
                 B. Benefits{' '}
                 <button className="N009dropdown-btn">{activeSection === 'benefits' ? '▲' : '▼'}</button>
               </h3>
@@ -188,7 +190,7 @@ const Dpiit2= () => {
             </div>
 
             <div className="N009objective">
-              <h3 onClick={() => toggleSection('eligibility')}>
+              <h3 onClick={() => handleSidebarClick('eligibility')}>
                 C. Eligibility{' '}
                 <button className="N009dropdown-btn">{activeSection === 'eligibility' ? '▲' : '▼'}</button>
               </h3>
@@ -196,7 +198,7 @@ const Dpiit2= () => {
             </div>
 
             <div className="N009objective">
-              <h3 onClick={() => toggleSection('registration')}>
+              <h3 onClick={() => handleSidebarClick('registration')}>
                 D. Registration Process{' '}
                 <button className="N009dropdown-btn">{activeSection === 'registration' ? '▲' : '▼'}</button>
               </h3>
@@ -208,7 +210,6 @@ const Dpiit2= () => {
         )}
       </div>
     </div>
-
       
         <Fade direction="up" triggerOnce>
   <section className="N009useful-links-section">

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'; // Import Axios for HTTP requests
 import './ContactForm.css'; // Import the CSS
 
 const ContactForm = () => {
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,45 +15,77 @@ const ContactForm = () => {
     city: '',
     queryType: '',
     comments: '',
-    fileUpload: null,
+    fileUpload: null, // Holds the file
   });
+
+  const [file, setFile] = useState(null); // State to store file separately for easier management
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files ? files[0] : value,
-    });
+    if (name === 'fileUpload') {
+      setFile(files[0]); // Set the file in a separate state
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    alert(`Thank you, ${formData.firstName}! Your submission has been received.`); // Corrected string
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      contactNumber: '',
-      gender: '',
-      profession: '',
-      state: '',
-      city: '',
-      queryType: '',
-      comments: '',
-      fileUpload: null,
-    });
 
-    // Clear file input manually
-    document.querySelector('input[type="file"]').value = null;
+    // Prepare form data to send as 'multipart/form-data'
+    const formDataToSend = new FormData();
+    formDataToSend.append('firstName', formData.firstName);
+    formDataToSend.append('lastName', formData.lastName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('contactNumber', formData.contactNumber);
+    formDataToSend.append('gender', formData.gender);
+    formDataToSend.append('profession', formData.profession);
+    formDataToSend.append('state', formData.state);
+    formDataToSend.append('city', formData.city);
+    formDataToSend.append('queryType', formData.queryType);
+    formDataToSend.append('comments', formData.comments);
+    if (file) {
+      formDataToSend.append('fileUpload', file); // Append the file to the form data
+    }
+
+    try {
+      // Send the form data to the backend API (http://localhost:5000)
+      const response = await axios.post('http://localhost:5000/api/contact/submit', formDataToSend, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      
+      alert(`Thank you, ${formData.firstName}! Your submission has been received.`);
+      
+      // Reset the form after submission
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        contactNumber: '',
+        gender: '',
+        profession: '',
+        state: '',
+        city: '',
+        queryType: '',
+        comments: '',
+        fileUpload: null,
+      });
+      setFile(null);
+      document.querySelector('input[type="file"]').value = null; // Clear the file input manually
+
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('There was an error submitting the form. Please try again later.');
+    }
   };
-
-  const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/Faq12"); // Replace with your actual FAQ page route
   };
-
 
   return (
     <div className="contact-us-page1">
@@ -62,22 +94,22 @@ const ContactForm = () => {
         <div className="text90">
           <h1>Get in Touch with Us</h1>
           <div className='mailfig1'>
-         <img src="\images\mail.png" alt="Mail icon"/> <p>We'd love to hear from you</p>
-        
-         </div>
+            <img src="/images/mail.png" alt="Mail icon" />
+            <p>We'd love to hear from you</p>
+          </div>
         </div>
         <button className="faq-floating-button" onClick={handleClick}>
-         <img src="\images\faq-img8.jpeg" alt="FAQ Icon" className="faq-icon"/>
-         </button>
+          <img src="/images/faq-img8.jpeg" alt="FAQ Icon" className="faq-icon" />
+        </button>
         <div className="image2">
-          <img src="\images\contact-us.png" alt="Contact Us Illustration" />
+          <img src="/images/contact-us.png" alt="Contact Us Illustration" />
         </div>
       </div>
 
       {/* Middle Section */}
       <div className="section middle-section1">
         <div className="form-container1">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="form-row1">
               <input
                 type="text"
@@ -170,13 +202,18 @@ const ContactForm = () => {
               ></textarea>
             </div>
             <div className="form-row1">
-              <input type="file" name="fileUpload" onChange={handleChange} required />
+              <input 
+                type="file" 
+                name="fileUpload" 
+                onChange={handleChange} 
+                required 
+              />
             </div>
-           <button type="submit" id="contact-submit1">Submit</button>
+            <button type="submit" id="contact-submit1">Submit</button>
           </form>
         </div>
         <div className="form-image1">
-          <img src="\images\contatact.jpg" alt="Form Illustration" />
+          <img src="/images/contatact.jpg" alt="Form Illustration" />
         </div>
       </div>
 
@@ -191,7 +228,7 @@ const ContactForm = () => {
           <p>Working Hours: 10:00 AM - 6:00 PM</p>
         </div>
         <div className="image1">
-          <img src="\images\customer-feedback.png" alt="Footer Illustration" />
+          <img src="/images/customer-feedback.png" alt="Footer Illustration" />
         </div>
       </div>
     </div>

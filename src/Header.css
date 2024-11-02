@@ -181,4 +181,16 @@
   }
 }
   
-  
+.notification-icon {
+  position: relative;
+}
+
+.notification-icon .fa-bell {
+  padding-left: 10px;
+  font-size: 24px; /* Adjust size as needed */
+  color: #ee7e07; /* Adjust color as needed */
+}
+
+.notification-icon:hover {
+  color: #007bff; /* Change color on hover */
+}

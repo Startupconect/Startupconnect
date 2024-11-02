@@ -37,6 +37,11 @@ import TermsAndConditions from './TermsAndConditions';
 import ScrollToTop from './ScrollToTop'; // Import ScrollToTop
 import Faq from './Faq';
 import ForgetPassword from './ForgetPassword';
+ import RegistrationHome from './RegistrationHome';
+ import StartupRegistration from './StartupRegistration';
+  import InvestorRegistration from './InvestorRegistration';
+  import Individual from './Individual';
+  import MentorRegistartion from './MentorRegistration';
 
 
 const App = () => {
@@ -95,6 +100,12 @@ const App = () => {
         <Route path="/Faq12" element={<Faq/>}/>
         <Route path="/termsandcondition" element={<TermsAndConditions/>}/>
         <Route path="/forgetpassword1" element={<ForgetPassword/>}/>
+         <Route path="/RegistartionHome" element={<RegistrationHome/>}/>
+         <Route path="/StartupRegistration" element={<StartupRegistration/>}/>
+        <Route path="/InvestorRegistration" element={<InvestorRegistration/>}/> 
+         <Route path="/Individual" element={<Individual/>}/>
+        <Route path="/MentorRegistration" element={<MentorRegistartion/>}/>  
+
       </Routes>
       <Footer />
     </Router>
@@ -103,4 +114,17 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
