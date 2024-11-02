@@ -140,7 +140,7 @@ const LoginPage = () => {
               required
             />
 
-            <button type="button" className="verify-button" onClick={handleVerifyCaptcha}>
+            <button type="button" className="verify-btn" onClick={handleVerifyCaptcha}>
               Verify CAPTCHA
             </button>
             {captchaError && <p className="captcha-error">{captchaError}</p>}

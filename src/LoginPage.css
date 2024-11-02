@@ -133,7 +133,7 @@
   background-color: white;
   padding: 8px;
   border-radius: 5px;
-  width: fit-content;
+  width: 200px;
   justify-content: space-between;
 }
 
@@ -154,16 +154,19 @@
   cursor: pointer;
 }
 
-.verify-button {
+.verify-btn {
   margin-top: 10px;
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 10px 20px;
+  border-radius: 0px;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
-
-.verify-button:hover {
+.verify-btn:hover {
   background-color: #45a049;
 }
 
