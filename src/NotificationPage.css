@@ -1,17 +1,23 @@
 .notification-modal6070 {
   position: fixed;
-  top: 50%;
-  left: 80%;
-  transform: translate(-50%, -50%);
+  top: 63%;
+  left: 80%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 90%;
-  max-width: 600px;
+  height: 70%;
+  max-width: 400px;
+  max-height: 600px;
   z-index: 1000;
   animation: fadeIn6070 0.5s ease;
+  display: flex;
+  flex-direction: column; 
+  
 }
+
 @keyframes fadeIn6070 {
   from {
       opacity: 0;

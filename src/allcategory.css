@@ -85,18 +85,18 @@
 .bottomform {
   height: 150px;
   width: 100%;
-  background-color: rgb(34, 163, 198);
   border-radius: 10px;
-  padding: 20px;
+  
 }
 
 .bottomform p {
-  margin-left: 100px;
-  color: bisque;
+  text-align: center;
+  color: purple;
+  font-size: 19px;
 }
 
 .bottomform h2 {
-  color: rgb(143, 81, 31);
+  color:  #1b1b1b;
 }
 
 /* Bottom details */
@@ -219,6 +219,7 @@
   position: relative;
   transition: box-shadow 0.5s ease-in-out; /* Smooth transition */
   box-shadow: none; /* No shadow initially */
+  margin-bottom: 10px;
 }
 
 /* Glow effect on button click */
@@ -283,4 +284,9 @@
 
 .allcat-submit:active {
   transform: translateY(2px); /* Slight push effect on click */
+}
+
+.message124{
+  color: green;
+  margin-left: 60%;
 }

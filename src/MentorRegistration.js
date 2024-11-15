@@ -1,16 +1,48 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import "./MentorRegistration.css";
-import { Link } from "react-router-dom";
 
 const citiesByState = {
-  TamilNadu: ["Chennai", "Coimbatore", "Madurai", "Trichy"],
+  AndhraPradesh:[" Visakhapatnam", "Vijayawada", "Tirupati", "Guntur","Rajahmundry"],
+  ArunachalPradesh: ["Itanagar", "Tawang", "Pasighat", "Ziro"],
+  Assam:["Guwahati", "Dibrugarh", "Jorhat", "Silchar"],
+  Bihar:["Patna", "Gaya", "Bhagalpur", "Muzaffarpur"],
+  Chhatisgarh:["Raipur", "Bilaspur", "Bhilai", "Korba"],
+  Goa:["Panaji", "Margao", "Vasco da Gama", "Mapusa"],
+  Gujarat:[" Ahmedabad", "Surat", "Vadodara", "Rajkot"],
+  Haryana:["Gurgaon", "Faridabad", "Panipat", "Ambala"],
+  HimachalPradesh:["Shimla", "Manali", "Dharamshala", "Solan"],
+  Jharkhand:["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro"],
   Karnataka: ["Bangalore", "Mysore", "Mangalore"],
+  Kerala:["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur"],
+  MadhyaPradesh:["Bhopal", "Indore", "Gwalior", "Jabalpur"],
+  Maharashtra:[" Mumbai","Pune", "Nagpur"," Nashik"],
+  Manipur:["Imphal", "Churachandpur", "Thoubal", "Moirang"],
+  Meghalaya:["Shillong", "Tura"," Nongstoin", "Jowai"],
+  Mizoram:["Aizawl", "Lunglei", "Champhai"," Serchhip"],
+  Nagaland:["Kohima", "Dimapur", "Mokokchung"," Wokha"],
+  Odisha:["Bhubaneswar","Cuttack", "Rourkela"," Puri"],
+  Punjab:["Chandigarh", "Amritsar", "Ludhiana","Jalandhar"],
+  Rajasthan:[" Jaipur", "Udaipur", "Jodhpur", "Ajmer"],
+  Sikkim:["Gangtok", "Namchi", "Mangan", "Gyalshing"],
+  TamilNadu: ["Chennai", "Coimbatore", "Madurai", "Trichy"],
+  Telangana:["Hyderabad", "Warangal"," Nizamabad"," Karimnagar"],
+  Tripura:["Agartala", "Udaipur", "Dharmanagar", "Kailashahar"],
+  UttarPradesh:[" Lucknow", "Kanpur", "Varanasi", "Agra"],
+  Uttarakhand:["Dehradun", "Haridwar"," Nainital"," Roorkee"],
+  WestBengal:["Kolkata", "Howrah", "Siliguri", "Durgapur"],
+  
+  
 };
 
 const Mentor = () => {
   const [step, setStep] = useState(1);
   const [network, setNetwork] = useState("");
+  const [tieEmail,setTieEmail] = useState("");
   const [email, setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [description,setDescription] = useState("");
   const [mentorName, setMentorName] = useState("");
   const [activeMonths, setActiveMonths] = useState("");
   const [state, setState] = useState("");
@@ -22,10 +54,69 @@ const Mentor = () => {
   const [websiteLink, setWebsiteLink] = useState("");
   const [hubProfileLink, setHubProfileLink] = useState("");
   const [brief, setBrief] = useState("");
+  const [successbrief,setSuccessBrief] = useState("");
   const [file, setFile] = useState(null);
   const [interest,setInterest] = useState("");
   const [industry,setIndustry] = useState("");
   const [sectors,setSectors] = useState("");
+  const [stages, setStage]=useState("");
+  const [formData,setFormData] = useState("");
+  
+  const navigate = useNavigate();
+
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    
+    formData.append('network', network);
+    formData.append('tieEmail', tieEmail);
+    formData.append('email', email);
+    formData.append('password', password);
+    formData.append('description', description);
+    formData.append('mentorName', mentorName);
+    formData.append('activeMonths', activeMonths);
+    formData.append('state', state);
+    formData.append('url', url);
+    formData.append('mobile', mobile);
+    formData.append('city', city);
+    formData.append('successStories', successStories);
+    formData.append('startupName', startupName);
+    formData.append('websiteLink', websiteLink);
+    formData.append('hubProfileLink', hubProfileLink);
+    formData.append('brief', brief);
+    formData.append('successbrief', successbrief);
+    
+    if (file) {
+      formData.append('file', file);
+    }
+
+    formData.append('interest', interest);
+    formData.append('industry', industry);
+    formData.append('sectors', sectors);
+    formData.append('stages', stages);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/mentors/register', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        navigate('/dashboard');
+        console.log(data.message);
+        // Handle success (e.g., redirect or display success message)
+      } else {
+        console.error(data.message);
+        // Handle error (e.g., display error message)
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+ 
+
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const mobileRegex = /^\d{10}$/;
@@ -80,6 +171,10 @@ const Mentor = () => {
     setSuccessStories((prev) => !prev);
   };
 
+  const handleCheckboxChange = (e) => {
+    setFormData(prevData => ({ ...prevData, termsAgreed: e.target.checked }));
+  };
+
   return (
     <div className="mentor-registration62">
       <div className="progress-bar62">
@@ -97,7 +192,7 @@ const Mentor = () => {
             <h2>Select Network</h2>
             <div className="network-options62">
               <span>Are you a member of:</span><br /><br />
-              <label>
+              
                 <input
                   type="radio"
                   name="network"
@@ -105,10 +200,10 @@ const Mentor = () => {
                   checked={network === "TIE"}
                   onChange={(e) => setNetwork(e.target.value)}
                   className="network-input62"
-                />
+                /><label id="label62">
                 TIE
-              </label>
-              <label>
+              </label><br></br>
+              
                 <input
                   type="radio"
                   name="network"
@@ -116,7 +211,7 @@ const Mentor = () => {
                   checked={network === "Other"}
                   onChange={(e) => setNetwork(e.target.value)}
                   className="network-input62"
-                />
+                /><label id="label62">
                 Other
               </label>
             </div>
@@ -126,17 +221,21 @@ const Mentor = () => {
                   Email ID:
                   <input
                     type="email"
+                    id="tie-email62"
                     placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={tieEmail}
+                    onChange={(e) => setTieEmail(e.target.value)}
                     className="network-input62"
                   />
-                </label><br />
+                </label><br /> <br></br>
                 <label>
                   Password:
                   <input
                     type="password"
+                    id="tie-passwors62"
                     placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="network-input62"
                   />
                 </label>
@@ -146,7 +245,13 @@ const Mentor = () => {
               <div className="tie-inputs162">
                 <label>
                   Description:
-                  <input type="text" placeholder="Enter a description" className="network-input62" />
+                  <input type="text" 
+                  id="tie-email62" 
+                  name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Enter a description" 
+                  className="network-input62" />
                 </label>
               </div>
             )}
@@ -273,10 +378,10 @@ const Mentor = () => {
               <div className="mentor-right62">
                 <label>SELECT STAGES OF STARTUP YOU ARE INTERESTED IN WORKING WITH</label>
                 <div className="stage-checkboxes62">
-                  <label><input type="checkbox"/>Ideation</label>
-                  <label><input type="checkbox" /> Validation</label>
-                  <label><input type="checkbox" /> Early Traction</label>
-                  <label><input type="checkbox" /> Scaling</label>
+                  <label><input type="checkbox" value ={"Ideation"}  onChange={(e) => setStage(e.target.value)}/> Ideation</label>
+                  <label><input type="checkbox" value={"validation"} onChange={(e) => setStage(e.target.value)}/> Validation</label>
+                  <label><input type="checkbox" value={"Early Traction"} onChange={(e) => setStage(e.target.value)}/> Early Traction</label>
+                  <label><input type="checkbox" value={"Scaling"} onChange={(e) => setStage(e.target.value)}/> Scaling</label>
                 </div>
                 <label>Brief:</label>
                 <input type="text" 
@@ -313,8 +418,35 @@ const Mentor = () => {
                   className="input-field62"
                 >
                   <option>Select state</option>
-                  <option>TamilNadu</option>
+                  <option>AndhraPradesh</option>
+                  <option>ArunachalPradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>HimachalPradesh</option>
+                  <option>Jharkhand</option>
                   <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>MadhyaPradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>TamilNadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>UttarPradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>WestBengal</option>
+                  
                 </select>
                 <label>LinkedIn Profile:</label>
                 <input
@@ -391,12 +523,23 @@ const Mentor = () => {
                 <label>Brief:</label>
                 <textarea
                   placeholder="Enter brief description"
-                  value={brief}
-                  onChange={(e) => setBrief(e.target.value)}
+                  value={successbrief}
+                  onChange={(e) => setSuccessBrief(e.target.value)}
                   className="input-field62"
                 ></textarea>
               </div>
             )}
+             <div className="checkbox-container62">
+              
+              <label>
+                <input
+                  type="checkbox"
+                  className="terms-checkbox60"
+                  checked={formData.termsAgreed}
+                  onChange={handleCheckboxChange}
+                />
+                I agree to the <a href="/termsandcondition">terms and conditions</a></label>
+              </div>
           </div>
         )}
         {step === 5 && (
@@ -404,30 +547,41 @@ const Mentor = () => {
             <h2>Review Details</h2>
             <div className="review-section62">
               <h3>Selected Network</h3>
-              <p>Network: {network}</p>
+              <p><strong>Network:</strong> {network}</p>
+      {network === "TIE" && (
+        <>
+          <p><strong>Email:</strong> {tieEmail}</p>
+          <p><strong>Password:</strong> {password}</p>
+        </>
+      )}
+      {network === "Other" && (
+        <p><strong>Description:</strong> {description}</p>
+      )}
               <h3>About Mentor</h3>
-              <p>Mentor Name: {mentorName}</p>
-              <p>Active Months: {activeMonths}</p>
-              <p>Interest:{interest}</p>
-              <p>Industry:{industry}</p>
-              <p>Sectors:{sectors}</p>
-              <p>Brief:{brief}</p>
+              <p><strong>Mentor Name:</strong>  {mentorName}</p>
+              <p><strong>Active Months:</strong>  {activeMonths}</p>
+              <p><strong>Interest:</strong> {interest}</p>
+              <p><strong>Industry:</strong> {industry}</p>
+              <p><strong>Sectors:</strong> {sectors}</p>
+              <p><strong>Stages:</strong> {stages}</p>
+              <p><strong>Brief:</strong> {brief}</p>
               <h3>Contact Info</h3>
-              <p>Email: {email}</p>
-              <p>State: {state}</p>
-              <p>City: {city}</p>
+              <p><strong>Email:</strong>  {email}</p>
+              <p><strong>State:</strong>  {state}</p>
+              <p><strong>City: </strong> {city}</p>
              
-              <p>Mobile: {mobile}</p>
-              <p>LinkedIn Profile: {url}</p>
+              <p><strong>Mobile:</strong> {mobile}</p>
+              <p><strong>LinkedIn Profile:</strong>  {url}</p>
               <h3>Success Story</h3>
               {successStories && (
                 <>
-                  <p>Startup Name: {startupName}</p>
-                  <p>Website Link: {websiteLink}</p>
-                  <p>Hub Profile Link: {hubProfileLink}</p>
-                  <p>Brief: {brief}</p>
+                  <p><strong>Startup Name:</strong> {startupName}</p>
+                  <p><strong>Website Link: </strong>{websiteLink}</p>
+                  <p><strong>Hub Profile Link: </strong> {hubProfileLink}</p>
+                  <p><strong>SuccessBrief: </strong> {successbrief}</p>
                 </>
               )}
+              <p><strong>Terms Agreed:</strong> {formData.termsAgreed ? "Yes" : "No"}</p><br />
             </div>
           </div>
         )}
@@ -435,11 +589,7 @@ const Mentor = () => {
       <div className="navigation-buttons62">
         {step > 1 && <button onClick={handlePrevious}>Previous</button>}
         {step < 5 && <button onClick={handleNext}>Next</button>}
-        {step === 5 && (
-        <Link to="/dashboard">
-          <button onClick={() => alert("Form submitted!")}>Submit</button>
-        </Link>
-      )}        
+        {step === 5 && <button onClick={handleSubmit}>Submit</button>}
       </div>
     </div>
   );

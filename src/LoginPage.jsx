@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./LoginPage.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
+const LoginPage = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [captcha, setCaptcha] = useState(""); // Store the generated alphanumeric CAPTCHA
+  const [captchaSuccess, setCaptchaSuccess] = useState(false);
   const [captchaInput, setCaptchaInput] = useState(""); // Store the user's CAPTCHA input
   const [captchaError, setCaptchaError] = useState(""); // Store CAPTCHA error messages
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false); // CAPTCHA verification status
@@ -30,16 +31,18 @@ const LoginPage = () => {
     generateCaptcha();
   }, []);
 
-  // Handle CAPTCHA verification
   const handleVerifyCaptcha = () => {
     if (captchaInput === captcha) {
-      setCaptchaError("CAPTCHA verified successfully!");
+      setCaptchaError(""); // Clear error if verified
+      setCaptchaSuccess(true); // Set success state
       setIsCaptchaVerified(true);
     } else {
       setCaptchaError("Incorrect CAPTCHA! Please try again.");
+      setCaptchaSuccess(false); // Reset success state
       setIsCaptchaVerified(false);
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +66,8 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Login Sucessful:",data);
+        setIsLoggedIn(true);  // Set login status to true
+        alert("Login Successful");
         navigate("/RegistartionHome"); // Redirect to the dashboard or home page
       } else {
         setErrorMessage(data.message || "Login failed! Please check your credentials.");
@@ -123,7 +127,7 @@ const LoginPage = () => {
           {/* CAPTCHA Section */}
           <div className="form-group captcha-section">
             <div className="capchahead1">
-            <label>Enter the  CAPTCHA</label>
+            <label>Enter the CAPTCHA</label>
             </div>
            
             <div className="captcha-display">
@@ -133,7 +137,6 @@ const LoginPage = () => {
               </span>
             </div>
             <input
-              id="captcha-input"
               type="text"
               value={captchaInput}
               onChange={(e) => setCaptchaInput(e.target.value)}
@@ -141,10 +144,11 @@ const LoginPage = () => {
               required
             />
 
-            <button type="button" className="verify-button123" onClick={handleVerifyCaptcha}>
-              Verify CAPTCHA
-            </button>
-            {captchaError && <p className="captcha-error">{captchaError}</p>}
+<button type="button" className="verify-button34" onClick={handleVerifyCaptcha}>
+        Verify CAPTCHA
+      </button>
+      {captchaError && <p className="captcha-error">{captchaError}</p>}
+      {captchaSuccess && <p className="captcha-success">CAPTCHA verified successfully!</p>}
           </div>
 
           <div className="form-group1">

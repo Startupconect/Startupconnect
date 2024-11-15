@@ -1,28 +1,25 @@
 import React from 'react';
-import './Aboutus.css'; // Assuming you have a CSS file for Main component
+import './Aboutus.css'; 
 import {useNavigate} from 'react-router-dom';
 const Aboutus = () => {
-  const navigate = useNavigate(); // Initialize navigate hook
+  const navigate = useNavigate(); 
   const handleContactClick = () => {
-    navigate('/contactus'); // Navigate to the contact-form page
+    navigate('/contactus');
   };
   const handleRegisterClick = () => {
-    navigate('/register'); // Navigate to the register page
+    navigate('/register'); 
   };
   return (
     <main>
-      {/* About Us Section */}
       <div className="aboutus-container">
-      {/* Left Container */}
       <div className="left-container87">
         <img
-          src="\images\Chedi.jpg" // Replace with the actual left-side image or SVG URL
+          src="\images\Chedi.jpg"
           alt="Left Decoration"
           className="left-image87"
         />
       </div>
 
-      {/* Middle Container */}
       <div className="middle-container87">
         <h2>About Us</h2>
         <p>
@@ -33,11 +30,10 @@ const Aboutus = () => {
         </p>
       </div>
 
-      {/* Right Container */}
       <div className="right-container">
         <div className="right-images">
           <img
-            src="\images\album.jpg" // Replace with the actual image URL
+            src="\images\album.jpg" 
             alt="Person"
             className="right-image"
           />
@@ -45,7 +41,6 @@ const Aboutus = () => {
       </div>
     </div>
 
-      {/* Why Startup Connect Section */}
       <section id="why-startup" className="why-startup">
         <h2>Why Startup Connect</h2>
         <p>

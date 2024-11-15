@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./InvestorRegistration.css";
-import { Link } from "react-router-dom";
 
 const InvestorRegistration = () => {
   const [step, setStep] = useState(1);
@@ -19,8 +19,8 @@ const InvestorRegistration = () => {
       investmentStage: '',
     },
   });
-
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleNext = () => {
     if (step === 1) {
@@ -39,7 +39,6 @@ const InvestorRegistration = () => {
         return;
       }
     }
-
     setError('');
     setStep(step + 1);
   };
@@ -75,10 +74,20 @@ const InvestorRegistration = () => {
     }
   };
 
-  const handleConfirm = () => {
-    console.log("Form Data Submitted: ", formData);
-    setStep(5);
+  const handleConfirm = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/investors/register", formData);
+      console.log(response.data); // Use the response data if needed
+      setSuccessMessage("Registration successful!");
+      setStep(5); // Move to the final step
+    } 
+    catch (error) {
+      setError("Error submitting the form. Please try again.");
+      console.error("Form submission error:", error.response ? error.response.data : error.message);
+    }
   };
+  
+  
 
   return (
     <div className="investor-registration5566">
@@ -93,6 +102,7 @@ const InvestorRegistration = () => {
 
       <div className="form-content5566">
         {error && <div className="error-message5566">{error}</div>}
+        {successMessage && <div className="success-message5566">{successMessage}</div>}
 
         {step === 1 && (
           <div>
@@ -144,7 +154,7 @@ const InvestorRegistration = () => {
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
               required
               className="select-field5566"
-              aria-label="Investment Category" // Extra attribute
+              aria-label="Investment Category"
             >
               <option value="">Select Category</option>
               <option value="Angel Investor">Angel Investor</option>
@@ -220,9 +230,7 @@ const InvestorRegistration = () => {
           <div>
             <h2>Congratulations!</h2>
             <p>Your registration has been successfully submitted. Thank you for your interest in connecting with startups!</p>
-            <Link to="/dashboard">
-
-            <button className="dashboard-button5566">Go to Dashboard</button></Link>
+            <button className="dashboard-button5566">Go to Dashboard</button>
           </div>
         )}
       </div>

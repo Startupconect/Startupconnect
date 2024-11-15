@@ -133,7 +133,7 @@
   background-color: white;
   padding: 8px;
   border-radius: 5px;
-  width: 200px;
+  width: fit-content;
   justify-content: space-between;
 }
 
@@ -149,29 +149,30 @@
   margin-top: 5px;
 }
 
+.captcha-success {
+  color: green;
+  margin-top: 5px;
+}
+
+
 .reload-symbol {
   font-size: 24px;
   cursor: pointer;
 }
 
-.verify-button123 {
+.verify-button34 {
   margin-top: 10px;
-  margin-left: 20px;
-  background-color:#1fc827 ;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  height: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
 }
 
-.verify-button123:hover {
-  background-color: #50b553;
-}
-#captcha-input{
- height: 40px;
- margin-top: 15px;
+.verify-button34:hover {
+  background-color: #45a049;
 }
 
 

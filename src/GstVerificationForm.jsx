@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./GstVerificationForm.css"; // Import the CSS file
+import axios from "axios";
+import "./GstVerificationForm.css";
 
 const GstVerificationFormA011 = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +17,12 @@ const GstVerificationFormA011 = () => {
     panFile: null,
     tinFile: null,
     bankFile: null,
-    capitalFile: null,
     shareholdersFile: null,
   });
 
-  const [taxOption, setTaxOption] = useState("gst"); // Default selection is GST
+  const [taxOption, setTaxOption] = useState("gst");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -37,28 +38,80 @@ const GstVerificationFormA011 = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const { gstNumber, panNumber, tinNumber, bankAccount, initialCapital, shareholders } = formData;
 
-    // Validation logic for the selected tax option
+    // Validation checks
     if (taxOption === "gst" && gstNumber.length !== 15) {
       setError("Please enter a valid GST number.");
+      return;
     } else if (taxOption === "tin" && tinNumber.length !== 11) {
       setError("Please enter a valid TIN number.");
+      return;
     } else if (panNumber.length !== 10) {
       setError("Please enter a valid PAN number.");
+      return;
     } else if (bankAccount.length < 9) {
       setError("Please enter a valid bank account number (minimum 9 digits).");
+      return;
     } else if (isNaN(initialCapital)) {
       setError("Please enter a valid amount for initial capital.");
+      return;
     } else if (shareholders.length === 0) {
       setError("Please enter shareholder details.");
-    } else {
-      setError("");
-      // Here you can send the form data and files for further validation or submission
-      alert("Form submitted successfully!");
+      return;
+    }
+
+    setError(""); // Clear previous errors
+
+    const data = new FormData();
+    data.append("gstNumber", gstNumber);
+    data.append("panNumber", panNumber);
+    data.append("tinNumber", tinNumber);
+    data.append("bankAccount", bankAccount);
+    data.append("initialCapital", initialCapital);
+    data.append("shareholders", shareholders);
+
+    // Append files to FormData if available
+    if (fileData.gstFile) data.append("gstFile", fileData.gstFile);
+    if (fileData.panFile) data.append("panFile", fileData.panFile);
+    if (fileData.tinFile) data.append("tinFile", fileData.tinFile);
+    if (fileData.bankFile) data.append("bankFile", fileData.bankFile);
+    if (fileData.shareholdersFile) data.append("shareholdersFile", fileData.shareholdersFile);
+
+    try {
+      const response = await axios.post("http://localhost:5000/api/gst", data, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      setSuccess(response.data.message);
+      setError(""); // Clear error messages on success
+
+      // Reset form data on success
+      setFormData({
+        gstNumber: "",
+        panNumber: "",
+        tinNumber: "",
+        bankAccount: "",
+        initialCapital: "",
+        shareholders: "",
+      });
+      setFileData({
+        gstFile: null,
+        panFile: null,
+        tinFile: null,
+        bankFile: null,
+        shareholdersFile: null,
+      });
+    } catch (err) {
+      if (err.response) {
+        setError(err.response.data.message || "An error occurred while submitting the form.");
+      } else if (err.request) {
+        setError("Unable to reach the backend. Please check your network or server.");
+      } else {
+        setError("An unexpected error occurred. Please try again later.");
+      }
     }
   };
 
@@ -67,13 +120,13 @@ const GstVerificationFormA011 = () => {
       <div className="form-containerA011">
         <h2 className="titleA011">Tax Details</h2>
         {error && <p className="error-messageA011">{error}</p>}
+        {success && <p className="success-messageA011">{success}</p>}
         <form onSubmit={handleSubmit}>
           <div className="tax-optionA011">
             <label>
               <input
                 type="radio"
                 name="taxOption"
-                id="taxOption_gst"
                 value="gst"
                 checked={taxOption === "gst"}
                 onChange={() => setTaxOption("gst")}
@@ -84,7 +137,6 @@ const GstVerificationFormA011 = () => {
               <input
                 type="radio"
                 name="taxOption"
-                id="taxOption_tin"
                 value="tin"
                 checked={taxOption === "tin"}
                 onChange={() => setTaxOption("tin")}
@@ -100,11 +152,10 @@ const GstVerificationFormA011 = () => {
                 className="input-fieldA011"
                 placeholder="Enter GST Number"
                 name="gstNumber"
-                id="gstNumber"
                 value={formData.gstNumber}
                 onChange={handleChange}
               />
-              <input type="file" className="file-inputA011" name="gstFile" id="gstFile" onChange={handleFileChange} />
+              <input type="file" className="file-inputA011" name="gstFile" onChange={handleFileChange} />
             </div>
           )}
 
@@ -115,11 +166,10 @@ const GstVerificationFormA011 = () => {
                 className="input-fieldA011"
                 placeholder="Enter TIN Number"
                 name="tinNumber"
-                id="tinNumber"
                 value={formData.tinNumber}
                 onChange={handleChange}
               />
-              <input type="file" className="file-inputA011" name="tinFile" id="tinFile" onChange={handleFileChange} />
+              <input type="file" className="file-inputA011" name="tinFile" onChange={handleFileChange} />
             </div>
           )}
 
@@ -129,11 +179,10 @@ const GstVerificationFormA011 = () => {
               className="input-fieldA011"
               placeholder="Enter PAN Number"
               name="panNumber"
-              id="panNumber"
               value={formData.panNumber}
               onChange={handleChange}
             />
-            <input type="file" className="file-inputA011" name="panFile" id="panFile" onChange={handleFileChange} />
+            <input type="file" className="file-inputA011" name="panFile" onChange={handleFileChange} />
           </div>
 
           <div className="input-groupA011">
@@ -142,20 +191,18 @@ const GstVerificationFormA011 = () => {
               className="input-fieldA011"
               placeholder="Enter Bank Account Number"
               name="bankAccount"
-              id="bankAccount"
               value={formData.bankAccount}
               onChange={handleChange}
             />
-            <input type="file" className="file-inputA011" name="bankFile" id="bankFile" onChange={handleFileChange} />
+            <input type="file" className="file-inputA011" name="bankFile" onChange={handleFileChange} />
           </div>
 
           <div className="input-groupA011">
             <input
               type="text"
               className="input-fieldA011"
-              placeholder="Enter Initial Capital (in currency)"
+              placeholder="Enter Initial Capital"
               name="initialCapital"
-              id="initialCapital"
               value={formData.initialCapital}
               onChange={handleChange}
             />
@@ -164,25 +211,19 @@ const GstVerificationFormA011 = () => {
           <div className="input-groupA011">
             <textarea
               className="input-fieldA011"
-              placeholder="Enter Shareholders and Ownership Percentages"
+              placeholder="Enter Shareholders"
               name="shareholders"
-              id="shareholders"
               value={formData.shareholders}
               onChange={handleChange}
             />
-            <input type="file" className="file-inputA011" name="shareholdersFile" id="shareholdersFile" onChange={handleFileChange} />
+            <input type="file" className="file-inputA011" name="shareholdersFile" onChange={handleFileChange} />
           </div>
 
-          <button type="submit" className="submit-buttonA011">
-            Submit Details
-          </button>
+          <button type="submit" className="submit-buttonA011">Submit Details</button>
         </form>
       </div>
       <div className="image-containerA011">
-        <img
-          src="/images/tax.png" // Replace with your image URL
-          alt="Startup Illustration"
-        />
+        <img src="/images/tax.png" alt="Startup Illustration" />
       </div>
     </div>
   );

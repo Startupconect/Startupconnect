@@ -4,6 +4,7 @@ import './NavMenu.css';
 import Form from './Form';
 import SelfCertification from './SelfCertification';
 import RegulationsTable from './RegulationsTable';
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
   const [activeTab, setActiveTab] = useState('recognition');
@@ -74,12 +75,14 @@ const NavMenu = () => {
               <FaCheck /> <strong>Capital Gains Tax Exemption:</strong> Startups can benefit from exemptions on capital gains tax under specific circumstances.
             </li>
           </ul>
+          <br></br>
           <h2><FaClipboard /> Application Process for IMB Validation</h2>
           <ol>
             <li>Ensure your startup is recognized by DPIIT on the Startup India portal.</li>
             <li>Submit an application for tax benefits to the IMB through the portal, along with necessary documentation.</li>
             <li>The IMB reviews the application and grants tax exemption eligibility upon approval.</li>
           </ol>
+          <br></br>
           <h2><FaFileAlt /> Documents Required</h2>  {/* Icon replaced with FaFileAlt */}
           <ul>
             <li><FaFileAlt /> DPIIT Recognition Certificate</li>
@@ -90,6 +93,9 @@ const NavMenu = () => {
             By obtaining IMB validation, your startup can significantly reduce its tax burden, allowing for more resources to fuel growth and innovation.
           </p>
         </div>
+        <Link to="/gstverificationform" style={{ textDecoration: 'none' }}>
+            <button className="incomebut1">GST & DPIIT Recognition</button>
+          </Link>
       </div>
     </div>
   )}

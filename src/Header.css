@@ -5,7 +5,7 @@
     width: auto;
     align-items: center;
     justify-content: space-between;
-    padding-top: 10px 20px 10px 20px;
+    padding-top: 10px 10px 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color:#D3D3D3;
     margin-bottom: 0px;}
@@ -166,9 +166,10 @@
   background-color:#f8f4f4;
 } 
 
-
+/* Full width for better tapping on mobile */
 /* Ensuring the navigation is responsive */
-@media (max-width: 768px) {
+
+/* @media (max-width: 768px) {
   .nav-links {
       flex-direction: column;
       align-items: center;
@@ -176,17 +177,16 @@
 
   .nav-links a {
       padding: 10px 0;
-      width: 100%; /* Full width for better tapping on mobile */
+      width: 100%; 
       text-align: center;
   }
-}
+} */
   
 .notification-icon {
   position: relative;
 }
 
 .notification-icon .fa-bell {
-  padding-left: 10px;
   font-size: 24px; /* Adjust size as needed */
   color: #ee7e07; /* Adjust color as needed */
 }
@@ -194,3 +194,5 @@
 .notification-icon:hover {
   color: #007bff; /* Change color on hover */
 }
+
+

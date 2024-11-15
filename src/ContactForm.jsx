@@ -57,8 +57,10 @@ const ContactForm = () => {
       const response = await axios.post('http://localhost:5000/api/contact/submit', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      
-      alert(`Thank you, ${formData.firstName}! Your submission has been received.`);
+      if (response.status >= 200 && response.status < 300){
+        alert(`Thank you, ${formData.firstName}! Your Response has been received.`);
+      }
+     
       
       // Reset the form after submission
       setFormData({

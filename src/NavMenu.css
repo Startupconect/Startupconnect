@@ -97,3 +97,14 @@
 .text-contentT006 ul li {
   margin-bottom: 10px;
 }
+
+.incomebut1{
+  height: 50px;
+  width: 200px;
+  background-color: green;
+  color: #fff;
+  margin-left: 40%;
+  cursor: pointer;
+  border-radius:  5px;
+  border: none;
+}

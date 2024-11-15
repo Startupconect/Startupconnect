@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Individual.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const IndividualRegistration = () => {
   const [step, setStep] = useState(1);
@@ -10,12 +10,15 @@ const IndividualRegistration = () => {
     age: '',
     occupation: '',
     interest: '',
+    brief:'',
     email: '',
     state: '',
     mobile: '',
     city: '',
     termsAgreed: false
   });
+
+  const navigate = useNavigate();
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -57,10 +60,47 @@ const IndividualRegistration = () => {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+  const handleSubmit = async () => {
+    const formDataToSend = new FormData();
+  
+    // Append form data
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('age', formData.age);
+    formDataToSend.append('occupation', formData.occupation);
+    formDataToSend.append('interest', formData.interest);
+    formDataToSend.append('brief', formData.brief);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('state', formData.state);
+    formDataToSend.append('mobile', formData.mobile);
+    formDataToSend.append('city', formData.city);
+    formDataToSend.append('termsAgreed', formData.termsAgreed);
+  
+    // Append the uploaded file if it exists
+    if (uploadedFile) {
+      formDataToSend.append('profilePicture', uploadedFile);
+    }
+
+    console.log("Form Data:", formDataToSend.get("name"), formDataToSend.get("profilePicture"));
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/individual/register', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+  
+      if (response.ok) {
+        alert('Registration successful!');
+        navigate('/dashboard');
+        // Clear form data or redirect as needed
+      } else {
+        alert('Registration failed.');
+      }
+    } catch (error) {
+      console.error("There was an error submitting the form:", error);
+      alert('Error submitting form.');
+    }
   };
+  
 
   return (
     <div className="individual-registration60">
@@ -152,6 +192,7 @@ const IndividualRegistration = () => {
                 <label>Brief:</label>
                 <input
                   type="text"
+                  name="brief"
                   placeholder="Enter brief"
                   className="input-field60"
                   onChange={handleChange}
@@ -245,6 +286,7 @@ const IndividualRegistration = () => {
               <p><strong>Age:</strong> {formData.age}</p><br />
               <p><strong>Occupation:</strong> {formData.occupation}</p><br />
               <p><strong>Interest:</strong> {formData.interest}</p><br />
+              <p><strong>Brief:</strong>{formData.brief}</p><br></br>
               <p><strong>Email:</strong> {formData.email}</p><br />
               <p><strong>State:</strong> {formData.state}</p><br />
               <p><strong>Mobile:</strong> {formData.mobile}</p><br />
@@ -260,10 +302,10 @@ const IndividualRegistration = () => {
           Previous
         </button>
         {step === 3 ? (
-           <Link to="/dashboard">
+           
             <button onClick={handleSubmit}>
             Submit
-          </button></Link>
+          </button>
         ) : (
           <button onClick={handleNext} disabled={step === 4}>
             Next

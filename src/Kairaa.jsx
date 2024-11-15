@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 const Kairaa = () => {
   const [activeTab, setActiveTab] = useState('individual');
-  const arrayValues = ['Value 1', 'Value 2', 'Value 3'];
   const [activeCard, setActiveCard] = useState(null);
 
   // Card details
@@ -55,12 +54,9 @@ const Kairaa = () => {
           </Link>
           <div className="x003-user-stats">
             <p>The No. of Users Registered</p>
-            <button
-              className="x003-btn-browse-network"
-              onClick={() => alert(arrayValues.join(','))}
-            >
-              Browse Network
-            </button>
+            <Link to='/SearchComponent' style={{textDecoration:'none'}}>
+           <button className="x003-btn-browse-network" >Browse Network </button>
+           </Link>
           </div>
         </div>
       </div>

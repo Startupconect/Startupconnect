@@ -1,0 +1,92 @@
+*{
+    font-family: 'Georgia';
+}
+.settings-container380 {
+    padding: 20px;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    width: 60%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 250px;
+    box-shadow: 3px 2px rgba(129, 129, 129, 0.683);
+}
+.settings-container380-h2{
+    text-align: center;
+    color:#434343;
+}
+.settings-container380-h3 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(95, 43, 226);
+    text-align: center;
+}
+
+.settings-section380 {
+    margin-bottom: 20px;
+}
+
+.settings-section380 label {
+    display: block;
+    margin-top: 10px;
+}
+
+.settings-section380 input[type="text"],
+.settings-section380 input[type="email"],
+.settings-section380 input[type="tel"],
+.settings-section380 input[type="file"],
+.settings-section380 textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.settings-section380 input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.setting-btn380 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.setting-btn380:hover {
+    background-color: #0056b3;
+}
+.device-list-h3 {
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+  
+  .device-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .device-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    color: #444;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 0.8em;
+  }
+  
+  .device-icon {
+    color: #007bff;
+    margin-right: 10px;
+    font-size: 1.3em;
+  }
+  
