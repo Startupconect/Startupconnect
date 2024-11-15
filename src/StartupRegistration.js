@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./StartupRegistration.css";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
+
 
 const industries = {
   B2B: [
@@ -97,6 +99,8 @@ const StartupRegistration = () => {
   const [otherIndustry, setOtherIndustry] = useState("");
   const [otherSector, setOtherSector] = useState("");
   const [service, setService] = useState("");
+  const [file,setFile] = useState(null);
+  
   const [entityNature, setEntityNature] = useState("");
   const [udyogAadhaar, setUdyogAadhaar] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
@@ -114,6 +118,60 @@ const StartupRegistration = () => {
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, 5));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    if (isValidEmail && isValidMobile && isValidState && isValidCity && isValidWebsite && isValidAppLink && agreeToTerms) {
+      try {
+        const formData = new FormData();
+        if (file){
+          formData.append('file' , file);
+        }
+        formData.append("startupName", startupName);
+        formData.append("brief", brief);
+        formData.append("email", email);
+        formData.append("mobile", mobile);
+        formData.append("state", state);
+        formData.append("city", city);
+        formData.append("website", website);
+        formData.append("appLink", appLink);
+        formData.append("stage", stage);
+        formData.append("funding", funding);
+        formData.append("industry", industry);
+        formData.append("sector", sector);
+        formData.append("otherIndustry", otherIndustry);
+        formData.append("otherSector", otherSector);
+        formData.append("service", service);
+        formData.append("entityNature", entityNature);
+        formData.append("udyogAadhaar", udyogAadhaar);
+        formData.append("agreeToTerms", agreeToTerms);
+        formData.append("interestAreas", JSON.stringify(interestAreas));
+  
+        const response = await axios.post("http://localhost:5000/api/startups/register", formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
+  
+        if (response.status === 201) {
+          setSuccessMessage(true);
+          setTimeout(() => navigate('/dashboard'), 3000);
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (error.response) {
+          alert(`Error: ${error.response.data.message || "Submission error. Try again later."}`);
+        } else if (error.request) {
+          alert("No response received. Check server connection.");
+        } else {
+          alert("An error occurred. Please try again.");
+        }
+      }
+    } else {
+      alert("Please complete all fields correctly.");
+    }
+  };
 
   const handleInterestChange = (e) => {
     setInterestAreas({
@@ -202,35 +260,32 @@ const handleAppLinkBlur = () => {
   }
 };
 
-const handleSubmit = () => {
-  // Here you can perform additional validation or data saving
-  if (isValidEmail && isValidMobile && isValidState && isValidCity && isValidWebsite && isValidAppLink && agreeToTerms) {
-    // If all validations pass, navigate to the dashboard
-    setSuccessMessage(true);
 
-    setTimeout(() => {
+ const handlefileupload = (event) =>{
+  setFile(event.target.files[0]);
+ }
 
-    navigate('/dashboard'); // Use navigate instead of window.location.href
-  }, 3000); // 
+ const handleStartupNameChange = (e) => {
+  const startupNameValue = e.target.value; // Get the input value
+  const isValid = /^[A-Za-z]+(?: [A-Za-z](\.|))?(?: [A-Za-z]+)*$/.test(startupNameValue);
+
+  if (isValid || startupNameValue === "") {
+    setStartupName(startupNameValue);  // Only update if valid
+    setIsValidStartupName(true);  // Set as valid
   } else {
-    // Optionally, handle errors here
-    alert("Please fill all the Fields Before submitting."); // Example error handling
+    setIsValidStartupName(false);  // Set as invalid if regex doesn't match
   }
-};
- 
-
-const handleStartupNameChange = (e) => {
-  const startupNameValue = e.target.value;
-  setStartupName(startupNameValue);
-  // Reset validity if the user is typing
-  setIsValidStartupName(true);
 };
 
 const handleStartupNameBlur = () => {
-  // Validation: Only allow alphanumeric characters and spaces
-  const isValid = /^[a-zA-Z0-9\s]*$/.test(startupName); // Change to * to allow empty input
+  // Final validation on blur
+  const isValid = /^[A-Za-z]+(?: [A-Za-z](\.|))?(?: [A-Za-z]+)*$/.test(startupName);
   setIsValidStartupName(isValid);
 };
+
+
+
+
   const renderStep = () => {
     <div className="maincont710">
     </div>
@@ -258,7 +313,8 @@ const handleStartupNameBlur = () => {
 
             <div className="form-group710">
               <label>Company Logo</label>
-              <input type="file" accept="image/*" />
+              <input type="file" 
+              onChange={handlefileupload} accept="image/*" />
             </div>
             <div className="form-group funding-options710">
                <label>Funding Status</label> 
